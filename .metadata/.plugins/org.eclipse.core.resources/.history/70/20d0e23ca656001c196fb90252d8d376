@@ -1,0 +1,40 @@
+package asaM1;
+
+import asa.*;
+import asa.impl.*;
+
+public class Serveur extends ConfigurationImpl{
+
+	AsaPackage aPackage=AsaPackage.eINSTANCE;
+	AsaFactory factory= aPackage.getAsaFactory();
+	
+	private PortRequisComposant sRequis;
+	private PortFournisComposant sFournis;
+	private PortRequisConfiguration out;
+	private PortFournisConfiguration in;
+	
+	private Database dataBase;
+	private SecurityManager securityManager;
+	private ConnectionManager connectionManager;
+	
+	private ConnecteurDatabase2Security dataBase2Security;
+	private ConnecteurConnection2Database connection2DataBase;
+	private ConnecteurConnection2Security connection2Security;
+	
+	
+	
+	public Serveur () {
+		super();
+		this.setName("Serveur");
+		sRequis=factory.createPortRequisComposant();
+		sFournis=factory.createPortFournisComposant();
+		in=factory.createPortFournisConfiguration();
+		out=factory.createPortRequisConfiguration();
+		
+		this.dataBase=new Database();
+		securityManager= new SecurityManager();
+		connectionManager=new ConnectionManager();
+		
+	}
+
+}

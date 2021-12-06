@@ -1,0 +1,27 @@
+package asaM1;
+import asa.AsaFactory;
+import asa.AsaPackage;
+import asa.impl.ComposantImpl;
+import asa.impl.PortFournisComposantImpl;
+import asa.*;
+
+public class Client extends ComposantImpl {
+	AsaPackage aPackage=AsaPackage.eINSTANCE;
+	AsaFactory factory= aPackage.getAsaFactory();
+	
+	private PortRequisComposant in;
+	private PortFournisComposant out;
+	
+	public Client() {
+		super();
+		this.setName("client");
+		in=factory.createPortRequisComposant();
+		out=factory.createPortFournisComposant();
+		//this.port = this.factory.createPortFournisComposant();
+		//this.port.setName(name + "_Send_Request");
+	}
+	
+	public void sendRequest() {
+		
+	}
+}

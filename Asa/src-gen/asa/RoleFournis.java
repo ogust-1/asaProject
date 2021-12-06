@@ -2,6 +2,8 @@
  */
 package asa;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Role Fournis</b></em>'.
@@ -20,27 +22,17 @@ package asa;
  */
 public interface RoleFournis extends Role {
 	/**
-	 * Returns the value of the '<em><b>Attachement</b></em>' reference.
+	 * Returns the value of the '<em><b>Attachement</b></em>' reference list.
+	 * The list contents are of type {@link asa.PortRequisComposant}.
 	 * It is bidirectional and its opposite is '{@link asa.PortRequisComposant#getAttachement <em>Attachement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attachement</em>' reference.
-	 * @see #setAttachement(PortRequisComposant)
+	 * @return the value of the '<em>Attachement</em>' reference list.
 	 * @see asa.AsaPackage#getRoleFournis_Attachement()
 	 * @see asa.PortRequisComposant#getAttachement
 	 * @model opposite="attachement"
 	 * @generated
 	 */
-	PortRequisComposant getAttachement();
-
-	/**
-	 * Sets the value of the '{@link asa.RoleFournis#getAttachement <em>Attachement</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Attachement</em>' reference.
-	 * @see #getAttachement()
-	 * @generated
-	 */
-	void setAttachement(PortRequisComposant value);
+	EList<PortRequisComposant> getAttachement();
 
 } // RoleFournis

@@ -2,6 +2,8 @@
  */
 package asa;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Port Fournis Configuration</b></em>'.
@@ -20,27 +22,17 @@ package asa;
  */
 public interface PortFournisConfiguration extends Port {
 	/**
-	 * Returns the value of the '<em><b>Binding</b></em>' reference.
+	 * Returns the value of the '<em><b>Binding</b></em>' reference list.
+	 * The list contents are of type {@link asa.PortRequisComposant}.
 	 * It is bidirectional and its opposite is '{@link asa.PortRequisComposant#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Binding</em>' reference.
-	 * @see #setBinding(PortRequisComposant)
+	 * @return the value of the '<em>Binding</em>' reference list.
 	 * @see asa.AsaPackage#getPortFournisConfiguration_Binding()
 	 * @see asa.PortRequisComposant#getBinding
 	 * @model opposite="binding"
 	 * @generated
 	 */
-	PortRequisComposant getBinding();
-
-	/**
-	 * Sets the value of the '{@link asa.PortFournisConfiguration#getBinding <em>Binding</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Binding</em>' reference.
-	 * @see #getBinding()
-	 * @generated
-	 */
-	void setBinding(PortRequisComposant value);
+	EList<PortRequisComposant> getBinding();
 
 } // PortFournisConfiguration

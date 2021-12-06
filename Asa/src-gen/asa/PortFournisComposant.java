@@ -2,6 +2,8 @@
  */
 package asa;
 
+import org.eclipse.emf.common.util.EList;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Port Fournis Composant</b></em>'.
@@ -21,51 +23,31 @@ package asa;
  */
 public interface PortFournisComposant extends Port {
 	/**
-	 * Returns the value of the '<em><b>Binding</b></em>' reference.
+	 * Returns the value of the '<em><b>Binding</b></em>' reference list.
+	 * The list contents are of type {@link asa.PortRequisConfiguration}.
 	 * It is bidirectional and its opposite is '{@link asa.PortRequisConfiguration#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Binding</em>' reference.
-	 * @see #setBinding(PortRequisConfiguration)
+	 * @return the value of the '<em>Binding</em>' reference list.
 	 * @see asa.AsaPackage#getPortFournisComposant_Binding()
 	 * @see asa.PortRequisConfiguration#getBinding
 	 * @model opposite="binding"
 	 * @generated
 	 */
-	PortRequisConfiguration getBinding();
+	EList<PortRequisConfiguration> getBinding();
 
 	/**
-	 * Sets the value of the '{@link asa.PortFournisComposant#getBinding <em>Binding</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Binding</em>' reference.
-	 * @see #getBinding()
-	 * @generated
-	 */
-	void setBinding(PortRequisConfiguration value);
-
-	/**
-	 * Returns the value of the '<em><b>Attachement</b></em>' reference.
+	 * Returns the value of the '<em><b>Attachement</b></em>' reference list.
+	 * The list contents are of type {@link asa.RoleRequis}.
 	 * It is bidirectional and its opposite is '{@link asa.RoleRequis#getAttachement <em>Attachement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attachement</em>' reference.
-	 * @see #setAttachement(RoleRequis)
+	 * @return the value of the '<em>Attachement</em>' reference list.
 	 * @see asa.AsaPackage#getPortFournisComposant_Attachement()
 	 * @see asa.RoleRequis#getAttachement
 	 * @model opposite="attachement"
 	 * @generated
 	 */
-	RoleRequis getAttachement();
-
-	/**
-	 * Sets the value of the '{@link asa.PortFournisComposant#getAttachement <em>Attachement</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Attachement</em>' reference.
-	 * @see #getAttachement()
-	 * @generated
-	 */
-	void setAttachement(RoleRequis value);
+	EList<RoleRequis> getAttachement();
 
 } // PortFournisComposant

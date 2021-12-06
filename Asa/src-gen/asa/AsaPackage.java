@@ -113,7 +113,7 @@ public interface AsaPackage extends EPackage {
 	int PORT_FOURNIS_CONFIGURATION__NAME = PORT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Binding</b></em>' reference.
+	 * The feature id for the '<em><b>Binding</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -159,7 +159,7 @@ public interface AsaPackage extends EPackage {
 	int PORT_REQUIS_CONFIGURATION__NAME = PORT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Binding</b></em>' reference.
+	 * The feature id for the '<em><b>Binding</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -205,7 +205,7 @@ public interface AsaPackage extends EPackage {
 	int PORT_FOURNIS_COMPOSANT__NAME = PORT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Binding</b></em>' reference.
+	 * The feature id for the '<em><b>Binding</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -214,7 +214,7 @@ public interface AsaPackage extends EPackage {
 	int PORT_FOURNIS_COMPOSANT__BINDING = PORT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Attachement</b></em>' reference.
+	 * The feature id for the '<em><b>Attachement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -260,7 +260,7 @@ public interface AsaPackage extends EPackage {
 	int PORT_REQUIS_COMPOSANT__NAME = PORT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Binding</b></em>' reference.
+	 * The feature id for the '<em><b>Binding</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -269,7 +269,7 @@ public interface AsaPackage extends EPackage {
 	int PORT_REQUIS_COMPOSANT__BINDING = PORT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Attachement</b></em>' reference.
+	 * The feature id for the '<em><b>Attachement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -463,7 +463,7 @@ public interface AsaPackage extends EPackage {
 	int ROLE_FOURNIS__NAME = ROLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attachement</b></em>' reference.
+	 * The feature id for the '<em><b>Attachement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -509,7 +509,7 @@ public interface AsaPackage extends EPackage {
 	int ROLE_REQUIS__NAME = ROLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attachement</b></em>' reference.
+	 * The feature id for the '<em><b>Attachement</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -960,10 +960,10 @@ public interface AsaPackage extends EPackage {
 	EClass getPortFournisConfiguration();
 
 	/**
-	 * Returns the meta object for the reference '{@link asa.PortFournisConfiguration#getBinding <em>Binding</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.PortFournisConfiguration#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Binding</em>'.
+	 * @return the meta object for the reference list '<em>Binding</em>'.
 	 * @see asa.PortFournisConfiguration#getBinding()
 	 * @see #getPortFournisConfiguration()
 	 * @generated
@@ -981,10 +981,10 @@ public interface AsaPackage extends EPackage {
 	EClass getPortRequisConfiguration();
 
 	/**
-	 * Returns the meta object for the reference '{@link asa.PortRequisConfiguration#getBinding <em>Binding</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.PortRequisConfiguration#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Binding</em>'.
+	 * @return the meta object for the reference list '<em>Binding</em>'.
 	 * @see asa.PortRequisConfiguration#getBinding()
 	 * @see #getPortRequisConfiguration()
 	 * @generated
@@ -1002,10 +1002,10 @@ public interface AsaPackage extends EPackage {
 	EClass getPortFournisComposant();
 
 	/**
-	 * Returns the meta object for the reference '{@link asa.PortFournisComposant#getBinding <em>Binding</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.PortFournisComposant#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Binding</em>'.
+	 * @return the meta object for the reference list '<em>Binding</em>'.
 	 * @see asa.PortFournisComposant#getBinding()
 	 * @see #getPortFournisComposant()
 	 * @generated
@@ -1013,10 +1013,10 @@ public interface AsaPackage extends EPackage {
 	EReference getPortFournisComposant_Binding();
 
 	/**
-	 * Returns the meta object for the reference '{@link asa.PortFournisComposant#getAttachement <em>Attachement</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.PortFournisComposant#getAttachement <em>Attachement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attachement</em>'.
+	 * @return the meta object for the reference list '<em>Attachement</em>'.
 	 * @see asa.PortFournisComposant#getAttachement()
 	 * @see #getPortFournisComposant()
 	 * @generated
@@ -1034,10 +1034,10 @@ public interface AsaPackage extends EPackage {
 	EClass getPortRequisComposant();
 
 	/**
-	 * Returns the meta object for the reference '{@link asa.PortRequisComposant#getBinding <em>Binding</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.PortRequisComposant#getBinding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Binding</em>'.
+	 * @return the meta object for the reference list '<em>Binding</em>'.
 	 * @see asa.PortRequisComposant#getBinding()
 	 * @see #getPortRequisComposant()
 	 * @generated
@@ -1045,10 +1045,10 @@ public interface AsaPackage extends EPackage {
 	EReference getPortRequisComposant_Binding();
 
 	/**
-	 * Returns the meta object for the reference '{@link asa.PortRequisComposant#getAttachement <em>Attachement</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.PortRequisComposant#getAttachement <em>Attachement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attachement</em>'.
+	 * @return the meta object for the reference list '<em>Attachement</em>'.
 	 * @see asa.PortRequisComposant#getAttachement()
 	 * @see #getPortRequisComposant()
 	 * @generated
@@ -1128,10 +1128,10 @@ public interface AsaPackage extends EPackage {
 	EClass getRoleFournis();
 
 	/**
-	 * Returns the meta object for the reference '{@link asa.RoleFournis#getAttachement <em>Attachement</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.RoleFournis#getAttachement <em>Attachement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attachement</em>'.
+	 * @return the meta object for the reference list '<em>Attachement</em>'.
 	 * @see asa.RoleFournis#getAttachement()
 	 * @see #getRoleFournis()
 	 * @generated
@@ -1149,10 +1149,10 @@ public interface AsaPackage extends EPackage {
 	EClass getRoleRequis();
 
 	/**
-	 * Returns the meta object for the reference '{@link asa.RoleRequis#getAttachement <em>Attachement</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.RoleRequis#getAttachement <em>Attachement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attachement</em>'.
+	 * @return the meta object for the reference list '<em>Attachement</em>'.
 	 * @see asa.RoleRequis#getAttachement()
 	 * @see #getRoleRequis()
 	 * @generated
@@ -1469,7 +1469,7 @@ public interface AsaPackage extends EPackage {
 		EClass PORT_FOURNIS_CONFIGURATION = eINSTANCE.getPortFournisConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Binding</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Binding</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1487,7 +1487,7 @@ public interface AsaPackage extends EPackage {
 		EClass PORT_REQUIS_CONFIGURATION = eINSTANCE.getPortRequisConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Binding</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Binding</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1505,7 +1505,7 @@ public interface AsaPackage extends EPackage {
 		EClass PORT_FOURNIS_COMPOSANT = eINSTANCE.getPortFournisComposant();
 
 		/**
-		 * The meta object literal for the '<em><b>Binding</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Binding</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1513,7 +1513,7 @@ public interface AsaPackage extends EPackage {
 		EReference PORT_FOURNIS_COMPOSANT__BINDING = eINSTANCE.getPortFournisComposant_Binding();
 
 		/**
-		 * The meta object literal for the '<em><b>Attachement</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Attachement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1531,7 +1531,7 @@ public interface AsaPackage extends EPackage {
 		EClass PORT_REQUIS_COMPOSANT = eINSTANCE.getPortRequisComposant();
 
 		/**
-		 * The meta object literal for the '<em><b>Binding</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Binding</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1539,7 +1539,7 @@ public interface AsaPackage extends EPackage {
 		EReference PORT_REQUIS_COMPOSANT__BINDING = eINSTANCE.getPortRequisComposant_Binding();
 
 		/**
-		 * The meta object literal for the '<em><b>Attachement</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Attachement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1613,7 +1613,7 @@ public interface AsaPackage extends EPackage {
 		EClass ROLE_FOURNIS = eINSTANCE.getRoleFournis();
 
 		/**
-		 * The meta object literal for the '<em><b>Attachement</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Attachement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1631,7 +1631,7 @@ public interface AsaPackage extends EPackage {
 		EClass ROLE_REQUIS = eINSTANCE.getRoleRequis();
 
 		/**
-		 * The meta object literal for the '<em><b>Attachement</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Attachement</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

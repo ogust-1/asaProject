@@ -5,30 +5,42 @@ import asa.AsaFactory;
 import asa.AsaPackage;
 import asa.PortFournisComposant;
 import asa.PortRequisComposant;
+import asa.RoleFournis;
+import asa.RoleRequis;
 
 public class Database extends ComposantImpl {
 	
 	AsaPackage aPackage=AsaPackage.eINSTANCE;
 	AsaFactory factory= aPackage.getAsaFactory();
+	PortRequisComposant in;
+	PortFournisComposant out;
 	
 	public Database() {
 		super();
 		this.setName("dataBase");
-		PortRequisComposant in=factory.createPortRequisComposant();
-		PortFournisComposant out=factory.createPortFournisComposant();
-		out.setAttachement(null);
+		in=factory.createPortRequisComposant();
+		out=factory.createPortFournisComposant();
 		this.getPortrequiscomposant().add(in);
 		this.getPortfourniscomposant().add(out);
 		
 	}
 	
 	public PortRequisComposant getIn(){
-		return this.getPortrequiscomposant().get(0);
+		//return this.getPortrequiscomposant().get(0);
+		return this.in;
 	}
 	
 	public PortFournisComposant getOut() {
-		return this.getPortfourniscomposant().get(1);
+		return this.out;
 	}	
+	
+	public void setRoleIn(RoleFournis roleFournis ) {
+		in.getAttachement().add(roleFournis);
+	}
+	
+	public void setRoleOut(RoleRequis roleRequis) {
+		out.getAttachement().add(roleRequis);
+	}
 	
 	
 	

@@ -7,13 +7,14 @@ import asa.PortFournisComposant;
 import asa.PortRequisConfiguration;
 import asa.RoleRequis;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,24 +32,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class PortFournisComposantImpl extends PortImpl implements PortFournisComposant {
 	/**
-	 * The cached value of the '{@link #getBinding() <em>Binding</em>}' reference.
+	 * The cached value of the '{@link #getBinding() <em>Binding</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBinding()
 	 * @generated
 	 * @ordered
 	 */
-	protected PortRequisConfiguration binding;
+	protected EList<PortRequisConfiguration> binding;
 
 	/**
-	 * The cached value of the '{@link #getAttachement() <em>Attachement</em>}' reference.
+	 * The cached value of the '{@link #getAttachement() <em>Attachement</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAttachement()
 	 * @generated
 	 * @ordered
 	 */
-	protected RoleRequis attachement;
+	protected EList<RoleRequis> attachement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,15 +75,11 @@ public class PortFournisComposantImpl extends PortImpl implements PortFournisCom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortRequisConfiguration getBinding() {
-		if (binding != null && binding.eIsProxy()) {
-			InternalEObject oldBinding = (InternalEObject) binding;
-			binding = (PortRequisConfiguration) eResolveProxy(oldBinding);
-			if (binding != oldBinding) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING, oldBinding, binding));
-			}
+	public EList<PortRequisConfiguration> getBinding() {
+		if (binding == null) {
+			binding = new EObjectWithInverseResolvingEList.ManyInverse<PortRequisConfiguration>(
+					PortRequisConfiguration.class, this, AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING,
+					AsaPackage.PORT_REQUIS_CONFIGURATION__BINDING);
 		}
 		return binding;
 	}
@@ -92,65 +89,10 @@ public class PortFournisComposantImpl extends PortImpl implements PortFournisCom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortRequisConfiguration basicGetBinding() {
-		return binding;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBinding(PortRequisConfiguration newBinding, NotificationChain msgs) {
-		PortRequisConfiguration oldBinding = binding;
-		binding = newBinding;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING, oldBinding, newBinding);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBinding(PortRequisConfiguration newBinding) {
-		if (newBinding != binding) {
-			NotificationChain msgs = null;
-			if (binding != null)
-				msgs = ((InternalEObject) binding).eInverseRemove(this, AsaPackage.PORT_REQUIS_CONFIGURATION__BINDING,
-						PortRequisConfiguration.class, msgs);
-			if (newBinding != null)
-				msgs = ((InternalEObject) newBinding).eInverseAdd(this, AsaPackage.PORT_REQUIS_CONFIGURATION__BINDING,
-						PortRequisConfiguration.class, msgs);
-			msgs = basicSetBinding(newBinding, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING,
-					newBinding, newBinding));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoleRequis getAttachement() {
-		if (attachement != null && attachement.eIsProxy()) {
-			InternalEObject oldAttachement = (InternalEObject) attachement;
-			attachement = (RoleRequis) eResolveProxy(oldAttachement);
-			if (attachement != oldAttachement) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT, oldAttachement, attachement));
-			}
+	public EList<RoleRequis> getAttachement() {
+		if (attachement == null) {
+			attachement = new EObjectWithInverseResolvingEList.ManyInverse<RoleRequis>(RoleRequis.class, this,
+					AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT, AsaPackage.ROLE_REQUIS__ATTACHEMENT);
 		}
 		return attachement;
 	}
@@ -160,69 +102,14 @@ public class PortFournisComposantImpl extends PortImpl implements PortFournisCom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoleRequis basicGetAttachement() {
-		return attachement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAttachement(RoleRequis newAttachement, NotificationChain msgs) {
-		RoleRequis oldAttachement = attachement;
-		attachement = newAttachement;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT, oldAttachement, newAttachement);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAttachement(RoleRequis newAttachement) {
-		if (newAttachement != attachement) {
-			NotificationChain msgs = null;
-			if (attachement != null)
-				msgs = ((InternalEObject) attachement).eInverseRemove(this, AsaPackage.ROLE_REQUIS__ATTACHEMENT,
-						RoleRequis.class, msgs);
-			if (newAttachement != null)
-				msgs = ((InternalEObject) newAttachement).eInverseAdd(this, AsaPackage.ROLE_REQUIS__ATTACHEMENT,
-						RoleRequis.class, msgs);
-			msgs = basicSetAttachement(newAttachement, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT,
-					newAttachement, newAttachement));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING:
-			if (binding != null)
-				msgs = ((InternalEObject) binding).eInverseRemove(this, AsaPackage.PORT_REQUIS_CONFIGURATION__BINDING,
-						PortRequisConfiguration.class, msgs);
-			return basicSetBinding((PortRequisConfiguration) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBinding()).basicAdd(otherEnd, msgs);
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT:
-			if (attachement != null)
-				msgs = ((InternalEObject) attachement).eInverseRemove(this, AsaPackage.ROLE_REQUIS__ATTACHEMENT,
-						RoleRequis.class, msgs);
-			return basicSetAttachement((RoleRequis) otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAttachement()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -236,9 +123,9 @@ public class PortFournisComposantImpl extends PortImpl implements PortFournisCom
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING:
-			return basicSetBinding(null, msgs);
+			return ((InternalEList<?>) getBinding()).basicRemove(otherEnd, msgs);
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT:
-			return basicSetAttachement(null, msgs);
+			return ((InternalEList<?>) getAttachement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -252,13 +139,9 @@ public class PortFournisComposantImpl extends PortImpl implements PortFournisCom
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING:
-			if (resolve)
-				return getBinding();
-			return basicGetBinding();
+			return getBinding();
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT:
-			if (resolve)
-				return getAttachement();
-			return basicGetAttachement();
+			return getAttachement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,14 +151,17 @@ public class PortFournisComposantImpl extends PortImpl implements PortFournisCom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING:
-			setBinding((PortRequisConfiguration) newValue);
+			getBinding().clear();
+			getBinding().addAll((Collection<? extends PortRequisConfiguration>) newValue);
 			return;
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT:
-			setAttachement((RoleRequis) newValue);
+			getAttachement().clear();
+			getAttachement().addAll((Collection<? extends RoleRequis>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -290,10 +176,10 @@ public class PortFournisComposantImpl extends PortImpl implements PortFournisCom
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING:
-			setBinding((PortRequisConfiguration) null);
+			getBinding().clear();
 			return;
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT:
-			setAttachement((RoleRequis) null);
+			getAttachement().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -308,9 +194,9 @@ public class PortFournisComposantImpl extends PortImpl implements PortFournisCom
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__BINDING:
-			return binding != null;
+			return binding != null && !binding.isEmpty();
 		case AsaPackage.PORT_FOURNIS_COMPOSANT__ATTACHEMENT:
-			return attachement != null;
+			return attachement != null && !attachement.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

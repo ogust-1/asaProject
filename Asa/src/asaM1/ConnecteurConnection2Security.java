@@ -3,6 +3,8 @@ package asaM1;
 import asa.AsaFactory;
 import asa.AsaPackage;
 import asa.Glue;
+import asa.PortFournisComposant;
+import asa.PortRequisComposant;
 import asa.RoleFournis;
 import asa.RoleRequis;
 import asa.impl.ConnecteurImpl;
@@ -26,10 +28,18 @@ public class ConnecteurConnection2Security extends ConnecteurImpl{
 	}
 	
 	public RoleRequis getIn() {
-		return this.getRolerequis().get(0);
+		return this.in;
 	}
 	
 	public RoleFournis GetOut() {
-		return this.getRolefournis().get(1);
+		return this.out;
+	}
+	
+	public void setPortIn(PortFournisComposant portFournis) {
+		in.getAttachement().add(portFournis);
+	}
+	
+	public void setPortOut(PortRequisComposant portRequis) {
+		out.getAttachement().add(portRequis);
 	}
 }

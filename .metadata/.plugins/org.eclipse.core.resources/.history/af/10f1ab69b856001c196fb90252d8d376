@@ -1,0 +1,71 @@
+package asaM1;
+
+import asa.*;
+import asa.impl.*;
+
+public class Serveur extends ConfigurationImpl{
+
+	AsaPackage aPackage=AsaPackage.eINSTANCE;
+	AsaFactory factory= aPackage.getAsaFactory();
+	
+	private PortRequisComposant sRequis;
+	private PortFournisComposant sFournis;
+	private PortRequisConfiguration in;
+	private PortFournisConfiguration out;
+	
+	private Database dataBase;
+	private SecurityManager securityManager;
+	private ConnectionManager connectionManager;
+	
+	private ConnecteurDatabase2Security dataBase2Security;
+	private ConnecteurConnection2Database connection2DataBase;
+	private ConnecteurConnection2Security connection2Security;
+	
+	
+	
+	public Serveur () {
+		super();
+		this.setName("Serveur");
+		sRequis=factory.createPortRequisComposant();
+		sFournis=factory.createPortFournisComposant();
+		out=factory.createPortFournisConfiguration();
+		in=factory.createPortRequisConfiguration();
+		
+		dataBase=new Database();
+		securityManager= new SecurityManager();
+		connectionManager=new ConnectionManager();
+		this.getComposant().add(connectionManager);
+		this.getComposant().add(securityManager);
+		this.getComposant().add(dataBase);
+		
+		dataBase2Security=new ConnecteurDatabase2Security();
+		connection2DataBase=new ConnecteurConnection2Database();
+		connection2Security=new ConnecteurConnection2Security();
+		
+		dataBase.setRoleIn(dataBase2Security.GetOut());
+		//dataBase2Security.setPortOut(dataBase.getIn());
+		dataBase.setRoleOut(dataBase2Security.getIn());
+		//dataBase2Security.setPortIn(dataBase.getOut());
+		dataBase.setRoleIn(connection2DataBase.GetOut());
+		dataBase.setRoleOut(connection2DataBase.getIn());
+		
+		securityManager.setRoleIn(dataBase2Security.GetOut());
+		securityManager.setRoleOut(dataBase2Security.getIn());
+		securityManager.setRoleIn(connection2Security.GetOut());
+		securityManager.setRoleOut(connection2DataBase.getIn());
+		
+		connectionManager.setRoleIn(connection2Security.GetOut());
+		connectionManager.setRoleOut(connection2Security.getIn());
+		connectionManager.setRoleIn(connection2DataBase.GetOut());
+		connectionManager.setRoleOut(connection2DataBase.getIn());				
+	}
+	
+	public ConnecteurDatabase2Security getTest() {
+		return this.dataBase2Security;
+	}
+	
+	public Database getData() {
+		return this.dataBase;
+	}
+
+}

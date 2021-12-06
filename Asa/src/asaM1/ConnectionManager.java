@@ -3,7 +3,11 @@ package asaM1;
 import asa.AsaFactory;
 import asa.AsaPackage;
 import asa.PortFournisComposant;
+import asa.PortFournisConfiguration;
 import asa.PortRequisComposant;
+import asa.PortRequisConfiguration;
+import asa.RoleFournis;
+import asa.RoleRequis;
 import asa.impl.ComposantImpl;
 
 public class ConnectionManager extends ComposantImpl{
@@ -23,10 +27,26 @@ public class ConnectionManager extends ComposantImpl{
 	}
 	
 	public PortRequisComposant getIn(){
-		return this.getPortrequiscomposant().get(0);
+		return this.in;
 	}
 	
 	public PortFournisComposant getOut() {
-		return this.getPortfourniscomposant().get(1);
-	}	
+		return this.out;
+	}
+	
+	public void setRoleIn(RoleFournis roleFournis ) {
+		in.getAttachement().add(roleFournis);
+	}
+	
+	public void setRoleOut(RoleRequis roleRequis) {
+		out.getAttachement().add(roleRequis);
+	}
+	
+	public void setBindingIn(PortFournisConfiguration portFournisConfig) {
+		in.getBinding().add(portFournisConfig);
+	}
+	
+	public void SetBindingOut(PortRequisConfiguration portRequisConfig) {
+		out.getBinding().add(portRequisConfig);
+	}
 }

@@ -5,20 +5,27 @@ import asa.AsaPackage;
 import asa.*;
 import asa.impl.*;
 
-public class ClientServeur {
+public class ClientServeur extends ConfigurationImpl{
+	
+	private Client client;
+	private Serveur serveur;
+	private RPC RPC;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public ClientServeur() {
 
 		AsaPackage aPackage=AsaPackage.eINSTANCE;
 		AsaFactory factory= aPackage.getAsaFactory();
 		
-		Configuration clientServer= factory.createConfiguration();
-		Composant server=factory.createConfiguration();
-		PortRequisComposant sRequis= factory.createPortRequisComposant();
-		PortFournisComposant sFournis = factory.createPortFournisComposant();
-		PortRequisConfiguration sServeurIn= factory.createPortRequisConfiguration();
-		PortFournisConfiguration sServeurOut=factory.createPortFournisConfiguration();
+		this.client=new Client();
+		this.serveur=new Serveur();
+		RPC=new RPC();
+		
+		RPC.setPortIn(client.getOut());
+		RPC.setPortIn(serveur.getOutExt());
+		RPC.setPortOut(client.getIn());
+		RPC.setPortIn(serveur.getOutExt());
+		
+		
 		
 	}
 

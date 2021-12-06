@@ -8,10 +8,10 @@ public class Serveur extends ConfigurationImpl{
 	AsaPackage aPackage=AsaPackage.eINSTANCE;
 	AsaFactory factory= aPackage.getAsaFactory();
 	
-	private PortRequisComposant sRequis;
-	private PortFournisComposant sFournis;
-	private PortRequisConfiguration out;
-	private PortFournisConfiguration in;
+	private PortRequisComposant inExt;
+	private PortFournisComposant outExt;
+	private PortRequisConfiguration in;
+	private PortFournisConfiguration out;
 	
 	private Database dataBase;
 	private SecurityManager securityManager;
@@ -26,15 +26,71 @@ public class Serveur extends ConfigurationImpl{
 	public Serveur () {
 		super();
 		this.setName("Serveur");
-		sRequis=factory.createPortRequisComposant();
-		sFournis=factory.createPortFournisComposant();
-		in=factory.createPortFournisConfiguration();
-		out=factory.createPortRequisConfiguration();
+		inExt=factory.createPortRequisComposant();
+		outExt=factory.createPortFournisComposant();
+		out=factory.createPortFournisConfiguration();
+		in=factory.createPortRequisConfiguration();
 		
-		this.dataBase=new Database();
+		
+		dataBase=new Database();
 		securityManager= new SecurityManager();
 		connectionManager=new ConnectionManager();
+		this.getComposant().add(connectionManager);
+		this.getComposant().add(securityManager);
+		this.getComposant().add(dataBase);
 		
+		dataBase2Security=new ConnecteurDatabase2Security();
+		connection2DataBase=new ConnecteurConnection2Database();
+		connection2Security=new ConnecteurConnection2Security();
+		
+		//connectiondes composants internes
+		dataBase.setRoleIn(dataBase2Security.GetOut());
+		//dataBase2Security.setPortOut(dataBase.getIn());
+		dataBase.setRoleOut(dataBase2Security.getIn());
+		//dataBase2Security.setPortIn(dataBase.getOut());
+		dataBase.setRoleIn(connection2DataBase.GetOut());
+		dataBase.setRoleOut(connection2DataBase.getIn());
+		
+		securityManager.setRoleIn(dataBase2Security.GetOut());
+		securityManager.setRoleOut(dataBase2Security.getIn());
+		securityManager.setRoleIn(connection2Security.GetOut());
+		securityManager.setRoleOut(connection2DataBase.getIn());
+		
+		connectionManager.setRoleIn(connection2Security.GetOut());
+		connectionManager.setRoleOut(connection2Security.getIn());
+		connectionManager.setRoleIn(connection2DataBase.GetOut());
+		connectionManager.setRoleOut(connection2DataBase.getIn());		
+		
+		//connexion du serveur
+		in.getBinding().add(connectionManager.getOut());
+		out.getBinding().add(connectionManager.getIn());
+		inExt.getBinding().add(out);
+		outExt.getBinding().add(in);
+		
+	}
+	
+	public ConnecteurDatabase2Security getTest() {
+		return this.dataBase2Security;
+	}
+	
+	public Database getData() {
+		return this.dataBase;
+	}
+	
+	public PortRequisComposant getInExt() {
+		return this.inExt;
+	}
+	
+	public PortFournisComposant getOutExt() {
+		return this.outExt;
+	}
+	
+	public void setInExt(RoleFournis roleFournis) {
+		inExt.getAttachement().add(roleFournis);
+	}
+	
+	public void setOutExt(RoleRequis roleRequis) {
+		outExt.getAttachement().add(roleRequis);
 	}
 
 }

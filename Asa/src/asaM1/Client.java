@@ -9,13 +9,24 @@ public class Client extends ComposantImpl {
 	AsaPackage aPackage=AsaPackage.eINSTANCE;
 	AsaFactory factory= aPackage.getAsaFactory();
 	
-	private PortFournisComposant port;
+	private PortRequisComposant in;
+	private PortFournisComposant out;
 	
-	public Client(String name) {
+	public Client() {
 		super();
-		this.setName(name);
-		this.port = this.factory.createPortFournisComposant();
-		this.port.setName(name + "_Send_Request");
+		this.setName("client");
+		in=factory.createPortRequisComposant();
+		out=factory.createPortFournisComposant();
+		//this.port = this.factory.createPortFournisComposant();
+		//this.port.setName(name + "_Send_Request");
+	}
+	
+	public PortRequisComposant getIn() {
+		return this.in;
+	}
+	
+	public PortFournisComposant getOut() {
+		return this.out;
 	}
 	
 	public void sendRequest() {
