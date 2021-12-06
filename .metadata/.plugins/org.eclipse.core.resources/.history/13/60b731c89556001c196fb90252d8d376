@@ -1,0 +1,12 @@
+package asaM1;
+
+import asa.impl.*;
+
+public class Database extends ComposantImpl {
+	
+	public Database() {
+		super();
+	}
+	
+
+}

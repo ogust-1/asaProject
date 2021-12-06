@@ -1,0 +1,15 @@
+package asaM1;
+
+import asa.impl.*;
+
+public class Database extends ComposantImpl {
+	
+	PortRequisComposantImpl portRequisDatabase;
+	PortFournisComposantImpl portFournisDatabase;
+	
+	public Database() {
+		super();
+	}
+	
+
+}
