@@ -5,24 +5,24 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortFournisConfiguration" eSuperTypes="#//Port">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" eType="#//PortRequisComposant"
-        eOpposite="#//PortRequisComposant/binding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" upperBound="-1"
+        eType="#//PortRequisComposant" eOpposite="#//PortRequisComposant/binding"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortRequisConfiguration" eSuperTypes="#//Port">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" eType="#//PortFournisComposant"
-        eOpposite="#//PortFournisComposant/binding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" upperBound="-1"
+        eType="#//PortFournisComposant" eOpposite="#//PortFournisComposant/binding"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortFournisComposant" eSuperTypes="#//Port">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" eType="#//PortRequisConfiguration"
-        eOpposite="#//PortRequisConfiguration/binding"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attachement" eType="#//RoleRequis"
-        eOpposite="#//RoleRequis/attachement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" upperBound="-1"
+        eType="#//PortRequisConfiguration" eOpposite="#//PortRequisConfiguration/binding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attachement" upperBound="-1"
+        eType="#//RoleRequis" eOpposite="#//RoleRequis/attachement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortRequisComposant" eSuperTypes="#//Port">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" eType="#//PortFournisConfiguration"
-        eOpposite="#//PortFournisConfiguration/binding"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attachement" eType="#//RoleFournis"
-        eOpposite="#//RoleFournis/attachement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="binding" upperBound="-1"
+        eType="#//PortFournisConfiguration" eOpposite="#//PortFournisConfiguration/binding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attachement" upperBound="-1"
+        eType="#//RoleFournis" eOpposite="#//RoleFournis/attachement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -33,12 +33,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoleFournis" eSuperTypes="#//Role">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attachement" eType="#//PortRequisComposant"
-        eOpposite="#//PortRequisComposant/attachement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attachement" upperBound="-1"
+        eType="#//PortRequisComposant" eOpposite="#//PortRequisComposant/attachement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoleRequis" eSuperTypes="#//Role">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attachement" eType="#//PortFournisComposant"
-        eOpposite="#//PortFournisComposant/attachement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attachement" upperBound="-1"
+        eType="#//PortFournisComposant" eOpposite="#//PortFournisComposant/attachement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Glue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -5,7 +5,7 @@
     <semanticResources>asa.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_KCFGUExAEeyV9bd1_NKA5g">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KJhyIExAEeyV9bd1_NKA5g" name="asa" repPath="#_KGjWoExAEeyV9bd1_NKA5g" changeId="3cf5ee81-66f5-49a8-9fc4-59f71e6dd801">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KJhyIExAEeyV9bd1_NKA5g" name="asa" repPath="#_KGjWoExAEeyV9bd1_NKA5g" changeId="0205858c-a800-46ab-8c7e-9d9fd44b403c">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="asa.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -1133,7 +1133,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_9I8B8ExFEeyL-s8H9Atjfg" sourceNode="_hABBsExAEeyV9bd1_NKA5g" targetNode="_z7vE0ExAEeyV9bd1_NKA5g" beginLabel="[0..1] binding" endLabel="[0..1] binding">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_9I8B8ExFEeyL-s8H9Atjfg" sourceNode="_hABBsExAEeyV9bd1_NKA5g" targetNode="_z7vE0ExAEeyV9bd1_NKA5g" beginLabel="[0..*] binding" endLabel="[0..*] binding">
       <target xmi:type="ecore:EReference" href="asa.ecore#//PortFournisConfiguration/binding"/>
       <semanticElements xmi:type="ecore:EReference" href="asa.ecore#//PortFournisConfiguration/binding"/>
       <semanticElements xmi:type="ecore:EReference" href="asa.ecore#//PortRequisComposant/binding"/>
@@ -1144,7 +1144,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Fyi8EExGEeyL-s8H9Atjfg" sourceNode="_qQUIYExAEeyV9bd1_NKA5g" targetNode="_zGCy8ExAEeyV9bd1_NKA5g" beginLabel="[0..1] binding" endLabel="[0..1] binding">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Fyi8EExGEeyL-s8H9Atjfg" sourceNode="_qQUIYExAEeyV9bd1_NKA5g" targetNode="_zGCy8ExAEeyV9bd1_NKA5g" beginLabel="[0..*] binding" endLabel="[0..*] binding">
       <target xmi:type="ecore:EReference" href="asa.ecore#//PortRequisConfiguration/binding"/>
       <semanticElements xmi:type="ecore:EReference" href="asa.ecore#//PortRequisConfiguration/binding"/>
       <semanticElements xmi:type="ecore:EReference" href="asa.ecore#//PortFournisComposant/binding"/>
@@ -1155,7 +1155,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kM8B80xGEeyL-s8H9Atjfg" sourceNode="_zGCy8ExAEeyV9bd1_NKA5g" targetNode="_QbAh0ExBEeyV9bd1_NKA5g" beginLabel="[0..1] attachement" endLabel="[0..1] attachement">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_kM8B80xGEeyL-s8H9Atjfg" sourceNode="_zGCy8ExAEeyV9bd1_NKA5g" targetNode="_QbAh0ExBEeyV9bd1_NKA5g" beginLabel="[0..*] attachement" endLabel="[0..*] attachement">
       <target xmi:type="ecore:EReference" href="asa.ecore#//PortFournisComposant/attachement"/>
       <semanticElements xmi:type="ecore:EReference" href="asa.ecore#//PortFournisComposant/attachement"/>
       <semanticElements xmi:type="ecore:EReference" href="asa.ecore#//RoleRequis/attachement"/>
@@ -1166,7 +1166,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_oDHpYkxGEeyL-s8H9Atjfg" sourceNode="_z7vE0ExAEeyV9bd1_NKA5g" targetNode="_P_lKEExBEeyV9bd1_NKA5g" beginLabel="[0..1] attachement" endLabel="[0..1] attachement">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_oDHpYkxGEeyL-s8H9Atjfg" sourceNode="_z7vE0ExAEeyV9bd1_NKA5g" targetNode="_P_lKEExBEeyV9bd1_NKA5g" beginLabel="[0..*] attachement" endLabel="[0..*] attachement">
       <target xmi:type="ecore:EReference" href="asa.ecore#//PortRequisComposant/attachement"/>
       <semanticElements xmi:type="ecore:EReference" href="asa.ecore#//PortRequisComposant/attachement"/>
       <semanticElements xmi:type="ecore:EReference" href="asa.ecore#//RoleFournis/attachement"/>
