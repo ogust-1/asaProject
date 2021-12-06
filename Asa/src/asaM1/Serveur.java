@@ -13,6 +13,14 @@ public class Serveur extends ConfigurationImpl{
 	private PortRequisConfiguration out;
 	private PortFournisConfiguration in;
 	
+	private Database dataBase;
+	private SecurityManager securityManager;
+	private ConnectionManager connectionManager;
+	
+	private ConnecteurDatabase2Security dataBase2Security;
+	private ConnecteurConnection2Database connection2DataBase;
+	private ConnecteurConnection2Security connection2Security;
+	
 	
 	
 	public Serveur () {
@@ -22,6 +30,10 @@ public class Serveur extends ConfigurationImpl{
 		sFournis=factory.createPortFournisComposant();
 		in=factory.createPortFournisConfiguration();
 		out=factory.createPortRequisConfiguration();
+		
+		this.dataBase=new Database();
+		securityManager= new SecurityManager();
+		connectionManager=new ConnectionManager();
 		
 	}
 

@@ -20,7 +20,18 @@ public class SecurityManager extends ComposantImpl {
 		
 		in=factory.createPortRequisComposant();
 		out=factory.createPortFournisComposant();
+
+		this.getPortrequiscomposant().add(in);
+		this.getPortfourniscomposant().add(out);
 	}
+	
+	public PortRequisComposant getIn(){
+		return this.getPortrequiscomposant().get(0);
+	}
+	
+	public PortFournisComposant getOut() {
+		return this.getPortfourniscomposant().get(1);
+	}	
 	
 
 }

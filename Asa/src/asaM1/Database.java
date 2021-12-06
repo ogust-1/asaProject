@@ -11,16 +11,25 @@ public class Database extends ComposantImpl {
 	AsaPackage aPackage=AsaPackage.eINSTANCE;
 	AsaFactory factory= aPackage.getAsaFactory();
 	
-	PortRequisComposant in;
-	PortFournisComposant out;
-	
 	public Database() {
 		super();
 		this.setName("dataBase");
-		in=factory.createPortRequisComposant();
-		out=factory.createPortFournisComposant();
+		PortRequisComposant in=factory.createPortRequisComposant();
+		PortFournisComposant out=factory.createPortFournisComposant();
+		out.setAttachement(null);
+		this.getPortrequiscomposant().add(in);
+		this.getPortfourniscomposant().add(out);
 		
 	}
 	
-
+	public PortRequisComposant getIn(){
+		return this.getPortrequiscomposant().get(0);
+	}
+	
+	public PortFournisComposant getOut() {
+		return this.getPortfourniscomposant().get(1);
+	}	
+	
+	
+	
 }

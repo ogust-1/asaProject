@@ -1,0 +1,34 @@
+package asaM1;
+
+import asa.impl.*;
+import asa.AsaFactory;
+import asa.AsaPackage;
+import asa.PortFournisComposant;
+import asa.PortRequisComposant;
+
+public class Database extends ComposantImpl {
+	
+	AsaPackage aPackage=AsaPackage.eINSTANCE;
+	AsaFactory factory= aPackage.getAsaFactory();
+	
+	public Database() {
+		super();
+		this.setName("dataBase");
+		PortRequisComposant in=factory.createPortRequisComposant();
+		PortFournisComposant out=factory.createPortFournisComposant();
+		out.setAttachement(null);
+		this.getPortrequiscomposant().add(in);
+		this.getPortfourniscomposant().add(out);
+		
+	}
+	
+	public PortRequisComposant getIn(){
+		return this.getPortrequiscomposant().get(0);
+	}
+	
+	public PortFournisComposant getOut() {
+		return this.getPortfourniscomposant().get(1);
+	}	
+	
+
+}
