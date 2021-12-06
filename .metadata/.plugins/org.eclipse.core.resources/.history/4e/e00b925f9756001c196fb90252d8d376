@@ -1,0 +1,7 @@
+package asaM1;
+
+import asa.impl.ConnecteurImpl;
+
+public class ConnecteurDatabase2SecurityManager extends ConnecteurImpl {
+
+}
