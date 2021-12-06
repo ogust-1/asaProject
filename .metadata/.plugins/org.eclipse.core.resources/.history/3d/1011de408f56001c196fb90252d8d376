@@ -29,7 +29,7 @@ public interface PortFournisComposant extends Port {
 	 * @see #setBinding(PortRequisConfiguration)
 	 * @see asa.AsaPackage#getPortFournisComposant_Binding()
 	 * @see asa.PortRequisConfiguration#getBinding
-	 * @model opposite="binding"
+	 * @model opposite="binding" required="true"
 	 * @generated
 	 */
 	PortRequisConfiguration getBinding();
@@ -53,7 +53,7 @@ public interface PortFournisComposant extends Port {
 	 * @see #setAttachement(RoleRequis)
 	 * @see asa.AsaPackage#getPortFournisComposant_Attachement()
 	 * @see asa.RoleRequis#getAttachement
-	 * @model opposite="attachement"
+	 * @model opposite="attachement" required="true"
 	 * @generated
 	 */
 	RoleRequis getAttachement();

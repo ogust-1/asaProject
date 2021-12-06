@@ -53,7 +53,7 @@ public interface PortRequisComposant extends Port {
 	 * @see #setAttachement(RoleFournis)
 	 * @see asa.AsaPackage#getPortRequisComposant_Attachement()
 	 * @see asa.RoleFournis#getAttachement
-	 * @model opposite="attachement"
+	 * @model opposite="attachement" required="true"
 	 * @generated
 	 */
 	RoleFournis getAttachement();

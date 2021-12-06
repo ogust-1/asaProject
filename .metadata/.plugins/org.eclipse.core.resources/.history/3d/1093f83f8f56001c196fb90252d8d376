@@ -773,25 +773,25 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 		initEClass(portFournisConfigurationEClass, PortFournisConfiguration.class, "PortFournisConfiguration",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortFournisConfiguration_Binding(), this.getPortRequisComposant(),
-				this.getPortRequisComposant_Binding(), "binding", null, 0, 1, PortFournisConfiguration.class,
+				this.getPortRequisComposant_Binding(), "binding", null, 1, 1, PortFournisConfiguration.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portRequisConfigurationEClass, PortRequisConfiguration.class, "PortRequisConfiguration",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortRequisConfiguration_Binding(), this.getPortFournisComposant(),
-				this.getPortFournisComposant_Binding(), "binding", null, 0, 1, PortRequisConfiguration.class,
+				this.getPortFournisComposant_Binding(), "binding", null, 1, 1, PortRequisConfiguration.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portFournisComposantEClass, PortFournisComposant.class, "PortFournisComposant", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPortFournisComposant_Binding(), this.getPortRequisConfiguration(),
-				this.getPortRequisConfiguration_Binding(), "binding", null, 0, 1, PortFournisComposant.class,
+				this.getPortRequisConfiguration_Binding(), "binding", null, 1, 1, PortFournisComposant.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortFournisComposant_Attachement(), this.getRoleRequis(), this.getRoleRequis_Attachement(),
-				"attachement", null, 0, 1, PortFournisComposant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				"attachement", null, 1, 1, PortFournisComposant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portRequisComposantEClass, PortRequisComposant.class, "PortRequisComposant", !IS_ABSTRACT,
@@ -801,7 +801,7 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortRequisComposant_Attachement(), this.getRoleFournis(), this.getRoleFournis_Attachement(),
-				"attachement", null, 0, 1, PortRequisComposant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				"attachement", null, 1, 1, PortRequisComposant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -821,14 +821,14 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 		initEClass(roleFournisEClass, RoleFournis.class, "RoleFournis", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoleFournis_Attachement(), this.getPortRequisComposant(),
-				this.getPortRequisComposant_Attachement(), "attachement", null, 0, 1, RoleFournis.class, !IS_TRANSIENT,
+				this.getPortRequisComposant_Attachement(), "attachement", null, 1, 1, RoleFournis.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		initEClass(roleRequisEClass, RoleRequis.class, "RoleRequis", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRoleRequis_Attachement(), this.getPortFournisComposant(),
-				this.getPortFournisComposant_Attachement(), "attachement", null, 0, 1, RoleRequis.class, !IS_TRANSIENT,
+				this.getPortFournisComposant_Attachement(), "attachement", null, 1, 1, RoleRequis.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 

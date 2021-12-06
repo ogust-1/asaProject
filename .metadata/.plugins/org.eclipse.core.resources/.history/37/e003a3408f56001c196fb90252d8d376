@@ -28,7 +28,7 @@ public interface PortRequisConfiguration extends Port {
 	 * @see #setBinding(PortFournisComposant)
 	 * @see asa.AsaPackage#getPortRequisConfiguration_Binding()
 	 * @see asa.PortFournisComposant#getBinding
-	 * @model opposite="binding"
+	 * @model opposite="binding" required="true"
 	 * @generated
 	 */
 	PortFournisComposant getBinding();

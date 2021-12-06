@@ -28,7 +28,7 @@ public interface RoleRequis extends Role {
 	 * @see #setAttachement(PortFournisComposant)
 	 * @see asa.AsaPackage#getRoleRequis_Attachement()
 	 * @see asa.PortFournisComposant#getAttachement
-	 * @model opposite="attachement"
+	 * @model opposite="attachement" required="true"
 	 * @generated
 	 */
 	PortFournisComposant getAttachement();
