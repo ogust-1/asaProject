@@ -223,13 +223,22 @@ public interface AsaPackage extends EPackage {
 	int PORT_FOURNIS_COMPOSANT__ATTACHEMENT = PORT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Composant</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_FOURNIS_COMPOSANT__COMPOSANT = PORT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Port Fournis Composant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FOURNIS_COMPOSANT_FEATURE_COUNT = PORT_FEATURE_COUNT + 2;
+	int PORT_FOURNIS_COMPOSANT_FEATURE_COUNT = PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Port Fournis Composant</em>' class.
@@ -278,13 +287,22 @@ public interface AsaPackage extends EPackage {
 	int PORT_REQUIS_COMPOSANT__ATTACHEMENT = PORT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Composant</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_REQUIS_COMPOSANT__COMPOSANT = PORT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Port Requis Composant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_REQUIS_COMPOSANT_FEATURE_COUNT = PORT_FEATURE_COUNT + 2;
+	int PORT_REQUIS_COMPOSANT_FEATURE_COUNT = PORT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Port Requis Composant</em>' class.
@@ -472,13 +490,22 @@ public interface AsaPackage extends EPackage {
 	int ROLE_FOURNIS__ATTACHEMENT = ROLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Connecteur</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_FOURNIS__CONNECTEUR = ROLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Role Fournis</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FOURNIS_FEATURE_COUNT = ROLE_FEATURE_COUNT + 1;
+	int ROLE_FOURNIS_FEATURE_COUNT = ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Role Fournis</em>' class.
@@ -518,13 +545,22 @@ public interface AsaPackage extends EPackage {
 	int ROLE_REQUIS__ATTACHEMENT = ROLE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Connecteur</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE_REQUIS__CONNECTEUR = ROLE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Role Requis</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_REQUIS_FEATURE_COUNT = ROLE_FEATURE_COUNT + 1;
+	int ROLE_REQUIS_FEATURE_COUNT = ROLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Role Requis</em>' class.
@@ -592,31 +628,31 @@ public interface AsaPackage extends EPackage {
 	int CONNECTEUR__GLUE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Rolerequis</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTEUR__ROLEREQUIS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Rolefournis</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTEUR__ROLEFOURNIS = 2;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTEUR__NAME = 3;
+	int CONNECTEUR__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Rolerequis</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTEUR__ROLEREQUIS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Rolefournis</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTEUR__ROLEFOURNIS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Connecteur</em>' class.
@@ -683,31 +719,31 @@ public interface AsaPackage extends EPackage {
 	int COMPOSANT__SERVICEREQUIS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Portrequiscomposant</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSANT__PORTREQUISCOMPOSANT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Portfourniscomposant</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSANT__PORTFOURNISCOMPOSANT = 5;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSANT__NAME = 6;
+	int COMPOSANT__NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Portrequiscomposant</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSANT__PORTREQUISCOMPOSANT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Portfourniscomposant</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSANT__PORTFOURNISCOMPOSANT = 6;
 
 	/**
 	 * The number of structural features of the '<em>Composant</em>' class.
@@ -774,7 +810,16 @@ public interface AsaPackage extends EPackage {
 	int CONFIGURATION__SERVICEREQUIS = COMPOSANT__SERVICEREQUIS;
 
 	/**
-	 * The feature id for the '<em><b>Portrequiscomposant</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION__NAME = COMPOSANT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Portrequiscomposant</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -783,22 +828,13 @@ public interface AsaPackage extends EPackage {
 	int CONFIGURATION__PORTREQUISCOMPOSANT = COMPOSANT__PORTREQUISCOMPOSANT;
 
 	/**
-	 * The feature id for the '<em><b>Portfourniscomposant</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Portfourniscomposant</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int CONFIGURATION__PORTFOURNISCOMPOSANT = COMPOSANT__PORTFOURNISCOMPOSANT;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGURATION__NAME = COMPOSANT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Portfournisconfiguration</b></em>' containment reference list.
@@ -1024,6 +1060,17 @@ public interface AsaPackage extends EPackage {
 	EReference getPortFournisComposant_Attachement();
 
 	/**
+	 * Returns the meta object for the reference '{@link asa.PortFournisComposant#getComposant <em>Composant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Composant</em>'.
+	 * @see asa.PortFournisComposant#getComposant()
+	 * @see #getPortFournisComposant()
+	 * @generated
+	 */
+	EReference getPortFournisComposant_Composant();
+
+	/**
 	 * Returns the meta object for class '{@link asa.PortRequisComposant <em>Port Requis Composant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1054,6 +1101,17 @@ public interface AsaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPortRequisComposant_Attachement();
+
+	/**
+	 * Returns the meta object for the reference '{@link asa.PortRequisComposant#getComposant <em>Composant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Composant</em>'.
+	 * @see asa.PortRequisComposant#getComposant()
+	 * @see #getPortRequisComposant()
+	 * @generated
+	 */
+	EReference getPortRequisComposant_Composant();
 
 	/**
 	 * Returns the meta object for class '{@link asa.Service <em>Service</em>}'.
@@ -1139,6 +1197,17 @@ public interface AsaPackage extends EPackage {
 	EReference getRoleFournis_Attachement();
 
 	/**
+	 * Returns the meta object for the reference '{@link asa.RoleFournis#getConnecteur <em>Connecteur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Connecteur</em>'.
+	 * @see asa.RoleFournis#getConnecteur()
+	 * @see #getRoleFournis()
+	 * @generated
+	 */
+	EReference getRoleFournis_Connecteur();
+
+	/**
 	 * Returns the meta object for class '{@link asa.RoleRequis <em>Role Requis</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1158,6 +1227,17 @@ public interface AsaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoleRequis_Attachement();
+
+	/**
+	 * Returns the meta object for the reference '{@link asa.RoleRequis#getConnecteur <em>Connecteur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Connecteur</em>'.
+	 * @see asa.RoleRequis#getConnecteur()
+	 * @see #getRoleRequis()
+	 * @generated
+	 */
+	EReference getRoleRequis_Connecteur();
 
 	/**
 	 * Returns the meta object for class '{@link asa.Glue <em>Glue</em>}'.
@@ -1202,10 +1282,10 @@ public interface AsaPackage extends EPackage {
 	EReference getConnecteur_Glue();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link asa.Connecteur#getRolerequis <em>Rolerequis</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.Connecteur#getRolerequis <em>Rolerequis</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Rolerequis</em>'.
+	 * @return the meta object for the reference list '<em>Rolerequis</em>'.
 	 * @see asa.Connecteur#getRolerequis()
 	 * @see #getConnecteur()
 	 * @generated
@@ -1213,10 +1293,10 @@ public interface AsaPackage extends EPackage {
 	EReference getConnecteur_Rolerequis();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link asa.Connecteur#getRolefournis <em>Rolefournis</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.Connecteur#getRolefournis <em>Rolefournis</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Rolefournis</em>'.
+	 * @return the meta object for the reference list '<em>Rolefournis</em>'.
 	 * @see asa.Connecteur#getRolefournis()
 	 * @see #getConnecteur()
 	 * @generated
@@ -1289,10 +1369,10 @@ public interface AsaPackage extends EPackage {
 	EReference getComposant_Servicerequis();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link asa.Composant#getPortrequiscomposant <em>Portrequiscomposant</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.Composant#getPortrequiscomposant <em>Portrequiscomposant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Portrequiscomposant</em>'.
+	 * @return the meta object for the reference list '<em>Portrequiscomposant</em>'.
 	 * @see asa.Composant#getPortrequiscomposant()
 	 * @see #getComposant()
 	 * @generated
@@ -1300,10 +1380,10 @@ public interface AsaPackage extends EPackage {
 	EReference getComposant_Portrequiscomposant();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link asa.Composant#getPortfourniscomposant <em>Portfourniscomposant</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.Composant#getPortfourniscomposant <em>Portfourniscomposant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Portfourniscomposant</em>'.
+	 * @return the meta object for the reference list '<em>Portfourniscomposant</em>'.
 	 * @see asa.Composant#getPortfourniscomposant()
 	 * @see #getComposant()
 	 * @generated
@@ -1521,6 +1601,14 @@ public interface AsaPackage extends EPackage {
 		EReference PORT_FOURNIS_COMPOSANT__ATTACHEMENT = eINSTANCE.getPortFournisComposant_Attachement();
 
 		/**
+		 * The meta object literal for the '<em><b>Composant</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_FOURNIS_COMPOSANT__COMPOSANT = eINSTANCE.getPortFournisComposant_Composant();
+
+		/**
 		 * The meta object literal for the '{@link asa.impl.PortRequisComposantImpl <em>Port Requis Composant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1545,6 +1633,14 @@ public interface AsaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT_REQUIS_COMPOSANT__ATTACHEMENT = eINSTANCE.getPortRequisComposant_Attachement();
+
+		/**
+		 * The meta object literal for the '<em><b>Composant</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_REQUIS_COMPOSANT__COMPOSANT = eINSTANCE.getPortRequisComposant_Composant();
 
 		/**
 		 * The meta object literal for the '{@link asa.impl.ServiceImpl <em>Service</em>}' class.
@@ -1621,6 +1717,14 @@ public interface AsaPackage extends EPackage {
 		EReference ROLE_FOURNIS__ATTACHEMENT = eINSTANCE.getRoleFournis_Attachement();
 
 		/**
+		 * The meta object literal for the '<em><b>Connecteur</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE_FOURNIS__CONNECTEUR = eINSTANCE.getRoleFournis_Connecteur();
+
+		/**
 		 * The meta object literal for the '{@link asa.impl.RoleRequisImpl <em>Role Requis</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1637,6 +1741,14 @@ public interface AsaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE_REQUIS__ATTACHEMENT = eINSTANCE.getRoleRequis_Attachement();
+
+		/**
+		 * The meta object literal for the '<em><b>Connecteur</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROLE_REQUIS__CONNECTEUR = eINSTANCE.getRoleRequis_Connecteur();
 
 		/**
 		 * The meta object literal for the '{@link asa.impl.GlueImpl <em>Glue</em>}' class.
@@ -1675,7 +1787,7 @@ public interface AsaPackage extends EPackage {
 		EReference CONNECTEUR__GLUE = eINSTANCE.getConnecteur_Glue();
 
 		/**
-		 * The meta object literal for the '<em><b>Rolerequis</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Rolerequis</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1683,7 +1795,7 @@ public interface AsaPackage extends EPackage {
 		EReference CONNECTEUR__ROLEREQUIS = eINSTANCE.getConnecteur_Rolerequis();
 
 		/**
-		 * The meta object literal for the '<em><b>Rolefournis</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Rolefournis</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1741,7 +1853,7 @@ public interface AsaPackage extends EPackage {
 		EReference COMPOSANT__SERVICEREQUIS = eINSTANCE.getComposant_Servicerequis();
 
 		/**
-		 * The meta object literal for the '<em><b>Portrequiscomposant</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Portrequiscomposant</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1749,7 +1861,7 @@ public interface AsaPackage extends EPackage {
 		EReference COMPOSANT__PORTREQUISCOMPOSANT = eINSTANCE.getComposant_Portrequiscomposant();
 
 		/**
-		 * The meta object literal for the '<em><b>Portfourniscomposant</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Portfourniscomposant</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

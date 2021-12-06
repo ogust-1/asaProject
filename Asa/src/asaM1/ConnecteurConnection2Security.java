@@ -15,7 +15,7 @@ public class ConnecteurConnection2Security extends ConnecteurImpl{
 	
 	private RoleFournis out;
 	private RoleRequis in;
-	private Glue glue;
+
 	
 	public ConnecteurConnection2Security() {
 		super();
@@ -23,6 +23,8 @@ public class ConnecteurConnection2Security extends ConnecteurImpl{
 		glue = factory.createGlue();
 		in = factory.createRoleRequis();
 		out = factory.createRoleFournis();
+		in.setConnecteur(this);
+		out.setConnecteur(this);
 		this.getRolerequis().add(in);
 		this.getRolefournis().add(out);
 	}
@@ -41,5 +43,10 @@ public class ConnecteurConnection2Security extends ConnecteurImpl{
 	
 	public void setPortOut(PortRequisComposant portRequis) {
 		out.getAttachement().add(portRequis);
+	}
+	
+	public void glue(Client c) {
+		SecurityManager s=(SecurityManager) out.getAttachement().get(0).getComposant();
+		s.interrogationDataBase(c);
 	}
 }

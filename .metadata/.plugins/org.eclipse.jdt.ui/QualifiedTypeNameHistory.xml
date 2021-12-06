@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="asa.Composant"/>
+    <fullyQualifiedTypeName name="asa.impl.PortFournisConfigurationImpl"/>
+    <fullyQualifiedTypeName name="asa.impl.PortRequisComposantImpl"/>
+    <fullyQualifiedTypeName name="asa.impl.PortFournisComposantImpl"/>
+    <fullyQualifiedTypeName name="asa.AsaFactory"/>
+    <fullyQualifiedTypeName name="asa.AsaPackage"/>
+    <fullyQualifiedTypeName name="asaM1.ConnecteurDatabase2SecurityManager"/>
     <fullyQualifiedTypeName name="asa.impl.ComposantImpl"/>
-    <fullyQualifiedTypeName name="asa.impl.ConnecteurImpl"/>
-    <fullyQualifiedTypeName name="asaM1.ConnectionManager"/>
+    <fullyQualifiedTypeName name="asa.Glue"/>
     <fullyQualifiedTypeName name="asaM1.SecurityManager"/>
+    <fullyQualifiedTypeName name="asaM1.ConnectionManager"/>
+    <fullyQualifiedTypeName name="asaM1.Database"/>
+    <fullyQualifiedTypeName name="asa.RoleRequis"/>
+    <fullyQualifiedTypeName name="asa.PortFournisComposant"/>
+    <fullyQualifiedTypeName name="asa.RoleFournis"/>
+    <fullyQualifiedTypeName name="asaM1.ConnecteurDatabase2Security"/>
+    <fullyQualifiedTypeName name="asaM1.ConnecteurConnection2Security"/>
+    <fullyQualifiedTypeName name="asa.PortFournisConfiguration"/>
+    <fullyQualifiedTypeName name="asa.PortRequisConfiguration"/>
+    <fullyQualifiedTypeName name="asa.PortRequisComposant"/>
+    <fullyQualifiedTypeName name="asa.Configuration"/>
+    <fullyQualifiedTypeName name="asa.Connecteur"/>
+    <fullyQualifiedTypeName name="asaM1.ConnecteurConnection2Database"/>
+    <fullyQualifiedTypeName name="asa.impl.ConnecteurImpl"/>
+    <fullyQualifiedTypeName name="asaM1.ConnecteurServeur"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,21 @@
+package asaM1;
+
+import asa.impl.ConnecteurImpl;
+
+public class ConnecteurSecurity2Connection extends ConnecteurImpl{
+	
+	public ConnecteurSecurity2Connection() {
+		super();
+		this.setName("Connecteur_to_database");
+		in = factory.createRoleRequis();
+		out = factory.createRoleFournis();
+		in.setConnecteur(this);
+		out.setConnecteur(this);
+		glue = factory.createGlue();
+		this.getRolerequis().add(in);
+		this.getRolefournis().add(out);
+	}
+	
+	
+
+}

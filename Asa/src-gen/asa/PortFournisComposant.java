@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link asa.PortFournisComposant#getBinding <em>Binding</em>}</li>
  *   <li>{@link asa.PortFournisComposant#getAttachement <em>Attachement</em>}</li>
+ *   <li>{@link asa.PortFournisComposant#getComposant <em>Composant</em>}</li>
  * </ul>
  *
  * @see asa.AsaPackage#getPortFournisComposant()
@@ -49,5 +50,29 @@ public interface PortFournisComposant extends Port {
 	 * @generated
 	 */
 	EList<RoleRequis> getAttachement();
+
+	/**
+	 * Returns the value of the '<em><b>Composant</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link asa.Composant#getPortfourniscomposant <em>Portfourniscomposant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Composant</em>' reference.
+	 * @see #setComposant(Composant)
+	 * @see asa.AsaPackage#getPortFournisComposant_Composant()
+	 * @see asa.Composant#getPortfourniscomposant
+	 * @model opposite="portfourniscomposant" required="true"
+	 * @generated
+	 */
+	Composant getComposant();
+
+	/**
+	 * Sets the value of the '{@link asa.PortFournisComposant#getComposant <em>Composant</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Composant</em>' reference.
+	 * @see #getComposant()
+	 * @generated
+	 */
+	void setComposant(Composant value);
 
 } // PortFournisComposant

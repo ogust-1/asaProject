@@ -1,0 +1,21 @@
+package asaM1;
+
+import asa.PortFournisComposant;
+import asa.RoleFournis;
+
+public class test {
+
+	public static void main(String[] args) {
+		Client cl1=new Client();
+		Client cl2=new Client();
+		cl1.setName("cl1");
+		cl2.setName("cl2");
+		Serveur serveur=new Serveur();
+		serveur.getData().addClient(cl1);
+		PortFournisComposant a=serveur.getTest().getIn().getAttachement().get(0);
+		RoleFournis b=serveur.getData().getIn().getAttachement().get(0);
+		System.out.println(b);
+		if (a!=null) {System.out.println("c'est pas la merde");}
+	}
+
+}

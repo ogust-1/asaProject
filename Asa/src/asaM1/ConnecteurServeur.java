@@ -15,14 +15,14 @@ public class ConnecteurServeur extends ConnecteurImpl {
 	
 	private RoleRequis in;
 	private RoleFournis out;
-	private Glue glue;
 	
 	public ConnecteurServeur () {
 		super();
 		this.setName("Connecteur_to_database");
 		in = factory.createRoleRequis();
 		out = factory.createRoleFournis();
-		glue = factory.createGlue();
+		in.setConnecteur(this);
+		out.setConnecteur(this);
 		this.getRolerequis().add(in);
 		this.getRolefournis().add(out);
 	}

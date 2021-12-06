@@ -20,10 +20,12 @@
     <genClasses ecoreClass="asa.ecore#//PortFournisComposant">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortFournisComposant/binding"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortFournisComposant/attachement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortFournisComposant/composant"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//PortRequisComposant">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortRequisComposant/binding"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortRequisComposant/attachement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortRequisComposant/composant"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//Service">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asa.ecore#//Service/Name"/>
@@ -35,27 +37,29 @@
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//RoleFournis">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//RoleFournis/attachement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//RoleFournis/connecteur"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//RoleRequis">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//RoleRequis/attachement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//RoleRequis/connecteur"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//Glue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asa.ecore#//Glue/Name"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//Connecteur">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Connecteur/glue"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Connecteur/rolerequis"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Connecteur/rolefournis"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asa.ecore#//Connecteur/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//Connecteur/rolerequis"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//Connecteur/rolefournis"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//Composant">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/constraint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/properties"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/servicefournis"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/servicerequis"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/portrequiscomposant"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/portfourniscomposant"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asa.ecore#//Composant/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/portrequiscomposant"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/portfourniscomposant"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//Configuration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Configuration/portfournisconfiguration"/>

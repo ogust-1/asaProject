@@ -57,6 +57,8 @@ public class ComposantItemProvider extends ItemProviderAdapter implements IEditi
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addPortrequiscomposantPropertyDescriptor(object);
+			addPortfourniscomposantPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,6 +80,36 @@ public class ComposantItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
+	 * This adds a property descriptor for the Portrequiscomposant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortrequiscomposantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Composant_portrequiscomposant_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Composant_portrequiscomposant_feature",
+								"_UI_Composant_type"),
+						AsaPackage.Literals.COMPOSANT__PORTREQUISCOMPOSANT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Portfourniscomposant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortfourniscomposantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Composant_portfourniscomposant_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Composant_portfourniscomposant_feature",
+								"_UI_Composant_type"),
+						AsaPackage.Literals.COMPOSANT__PORTFOURNISCOMPOSANT, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -93,8 +125,6 @@ public class ComposantItemProvider extends ItemProviderAdapter implements IEditi
 			childrenFeatures.add(AsaPackage.Literals.COMPOSANT__PROPERTIES);
 			childrenFeatures.add(AsaPackage.Literals.COMPOSANT__SERVICEFOURNIS);
 			childrenFeatures.add(AsaPackage.Literals.COMPOSANT__SERVICEREQUIS);
-			childrenFeatures.add(AsaPackage.Literals.COMPOSANT__PORTREQUISCOMPOSANT);
-			childrenFeatures.add(AsaPackage.Literals.COMPOSANT__PORTFOURNISCOMPOSANT);
 		}
 		return childrenFeatures;
 	}
@@ -165,8 +195,6 @@ public class ComposantItemProvider extends ItemProviderAdapter implements IEditi
 		case AsaPackage.COMPOSANT__PROPERTIES:
 		case AsaPackage.COMPOSANT__SERVICEFOURNIS:
 		case AsaPackage.COMPOSANT__SERVICEREQUIS:
-		case AsaPackage.COMPOSANT__PORTREQUISCOMPOSANT:
-		case AsaPackage.COMPOSANT__PORTFOURNISCOMPOSANT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -195,12 +223,6 @@ public class ComposantItemProvider extends ItemProviderAdapter implements IEditi
 
 		newChildDescriptors.add(createChildParameter(AsaPackage.Literals.COMPOSANT__SERVICEREQUIS,
 				AsaFactory.eINSTANCE.createServiceRequis()));
-
-		newChildDescriptors.add(createChildParameter(AsaPackage.Literals.COMPOSANT__PORTREQUISCOMPOSANT,
-				AsaFactory.eINSTANCE.createPortRequisComposant()));
-
-		newChildDescriptors.add(createChildParameter(AsaPackage.Literals.COMPOSANT__PORTFOURNISCOMPOSANT,
-				AsaFactory.eINSTANCE.createPortFournisComposant()));
 	}
 
 	/**

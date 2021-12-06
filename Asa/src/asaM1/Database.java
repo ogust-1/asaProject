@@ -1,6 +1,9 @@
 package asaM1;
 
 import asa.impl.*;
+
+import java.util.ArrayList;
+
 import asa.AsaFactory;
 import asa.AsaPackage;
 import asa.PortFournisComposant;
@@ -12,8 +15,10 @@ public class Database extends ComposantImpl {
 	
 	AsaPackage aPackage=AsaPackage.eINSTANCE;
 	AsaFactory factory= aPackage.getAsaFactory();
-	PortRequisComposant in;
-	PortFournisComposant out;
+	private PortRequisComposant in;
+	private PortFournisComposant out;
+	private ArrayList<Client> BDClient;
+	
 	
 	public Database() {
 		super();
@@ -22,6 +27,9 @@ public class Database extends ComposantImpl {
 		out=factory.createPortFournisComposant();
 		this.getPortrequiscomposant().add(in);
 		this.getPortfourniscomposant().add(out);
+		this.BDClient=new ArrayList<>();
+		in.setComposant(this);
+		out.setComposant(this);
 		
 	}
 	
@@ -42,6 +50,29 @@ public class Database extends ComposantImpl {
 		out.getAttachement().add(roleRequis);
 	}
 	
+	public void addClient(Client client) {
+		this.BDClient.add(client);
+	}
 	
+	public void  serviceConnection(int i) {
+		sentReponse2Connection( BDClient.get(i));
+	}
+	
+	public void clientIsPresent(Client client) {
+		sentResponse2Security( BDClient.contains(client));
+	}
+	
+	
+	public void sentReponse2Connection(Client client) {		
+		ConnecteurDatabase2Connection c=(ConnecteurDatabase2Connection) this.out.getAttachement().get(1).getConnecteur();
+		c.glue(client);
+		System.out.println("client envoyé au connecteur");
+	}
+	
+	public void sentResponse2Security(boolean b) {
+		ConnecteurDatabase2Security c= (ConnecteurDatabase2Security) this.out.getAttachement().get(0).getConnecteur();
+		c.glue(b);
+		System.out.println("reponse de security envoyé");
+	}
 	
 }

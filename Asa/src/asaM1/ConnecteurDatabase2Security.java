@@ -15,14 +15,15 @@ public class ConnecteurDatabase2Security extends ConnecteurImpl{
 	
 	private RoleRequis in;
 	private RoleFournis out;
-	private Glue glue;
+
 	
-	public ConnecteurDatabase2Security() {
+	public ConnecteurDatabase2Security(){
 		super();
 		this.setName("ConnecteurDatabase2SecurityManager");
 		in=factory.createRoleRequis();
 		out=factory.createRoleFournis();
-		glue= factory.createGlue();
+		in.setConnecteur(this);
+		out.setConnecteur(this);
 		this.getRolerequis().add(in);
 		this.getRolefournis().add(out);
 	}
@@ -41,5 +42,15 @@ public class ConnecteurDatabase2Security extends ConnecteurImpl{
 	
 	public void setPortOut(PortRequisComposant portRequis) {
 		out.getAttachement().add(portRequis);
+	}
+	
+	public void glue(boolean b) {
+		
+		SecurityManager m=(SecurityManager)out.getAttachement().get(0).getComposant();
+		if(b) {
+		m.reponseDataBase("vous avez accès", b);}
+		else {
+			m.reponseDataBase("vous n'avez pas accès", b);
+		}
 	}
 }

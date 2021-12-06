@@ -43,6 +43,7 @@ public class RoleRequisItemProvider extends RoleItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addAttachementPropertyDescriptor(object);
+			addConnecteurPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -60,6 +61,21 @@ public class RoleRequisItemProvider extends RoleItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_RoleRequis_attachement_feature",
 								"_UI_RoleRequis_type"),
 						AsaPackage.Literals.ROLE_REQUIS__ATTACHEMENT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connecteur feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnecteurPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_RoleRequis_connecteur_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RoleRequis_connecteur_feature",
+								"_UI_RoleRequis_type"),
+						AsaPackage.Literals.ROLE_REQUIS__CONNECTEUR, true, false, true, null, null, null));
 	}
 
 	/**

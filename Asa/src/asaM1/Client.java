@@ -14,7 +14,6 @@ public class Client extends ComposantImpl {
 	
 	public Client() {
 		super();
-		this.setName("client");
 		in=factory.createPortRequisComposant();
 		out=factory.createPortFournisComposant();
 		//this.port = this.factory.createPortFournisComposant();

@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -39,9 +40,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link asa.impl.ComposantImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link asa.impl.ComposantImpl#getServicefournis <em>Servicefournis</em>}</li>
  *   <li>{@link asa.impl.ComposantImpl#getServicerequis <em>Servicerequis</em>}</li>
+ *   <li>{@link asa.impl.ComposantImpl#getName <em>Name</em>}</li>
  *   <li>{@link asa.impl.ComposantImpl#getPortrequiscomposant <em>Portrequiscomposant</em>}</li>
  *   <li>{@link asa.impl.ComposantImpl#getPortfourniscomposant <em>Portfourniscomposant</em>}</li>
- *   <li>{@link asa.impl.ComposantImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,26 +89,6 @@ public class ComposantImpl extends MinimalEObjectImpl.Container implements Compo
 	protected EList<ServiceRequis> servicerequis;
 
 	/**
-	 * The cached value of the '{@link #getPortrequiscomposant() <em>Portrequiscomposant</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortrequiscomposant()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<PortRequisComposant> portrequiscomposant;
-
-	/**
-	 * The cached value of the '{@link #getPortfourniscomposant() <em>Portfourniscomposant</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPortfourniscomposant()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<PortFournisComposant> portfourniscomposant;
-
-	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,6 +107,26 @@ public class ComposantImpl extends MinimalEObjectImpl.Container implements Compo
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPortrequiscomposant() <em>Portrequiscomposant</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortrequiscomposant()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PortRequisComposant> portrequiscomposant;
+
+	/**
+	 * The cached value of the '{@link #getPortfourniscomposant() <em>Portfourniscomposant</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPortfourniscomposant()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PortFournisComposant> portfourniscomposant;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -205,8 +206,8 @@ public class ComposantImpl extends MinimalEObjectImpl.Container implements Compo
 	 */
 	public EList<PortRequisComposant> getPortrequiscomposant() {
 		if (portrequiscomposant == null) {
-			portrequiscomposant = new EObjectContainmentEList<PortRequisComposant>(PortRequisComposant.class, this,
-					AsaPackage.COMPOSANT__PORTREQUISCOMPOSANT);
+			portrequiscomposant = new EObjectWithInverseResolvingEList<PortRequisComposant>(PortRequisComposant.class,
+					this, AsaPackage.COMPOSANT__PORTREQUISCOMPOSANT, AsaPackage.PORT_REQUIS_COMPOSANT__COMPOSANT);
 		}
 		return portrequiscomposant;
 	}
@@ -218,10 +219,30 @@ public class ComposantImpl extends MinimalEObjectImpl.Container implements Compo
 	 */
 	public EList<PortFournisComposant> getPortfourniscomposant() {
 		if (portfourniscomposant == null) {
-			portfourniscomposant = new EObjectContainmentEList<PortFournisComposant>(PortFournisComposant.class, this,
-					AsaPackage.COMPOSANT__PORTFOURNISCOMPOSANT);
+			portfourniscomposant = new EObjectWithInverseResolvingEList<PortFournisComposant>(
+					PortFournisComposant.class, this, AsaPackage.COMPOSANT__PORTFOURNISCOMPOSANT,
+					AsaPackage.PORT_FOURNIS_COMPOSANT__COMPOSANT);
 		}
 		return portfourniscomposant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case AsaPackage.COMPOSANT__PORTREQUISCOMPOSANT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPortrequiscomposant()).basicAdd(otherEnd,
+					msgs);
+		case AsaPackage.COMPOSANT__PORTFOURNISCOMPOSANT:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPortfourniscomposant()).basicAdd(otherEnd,
+					msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -285,12 +306,12 @@ public class ComposantImpl extends MinimalEObjectImpl.Container implements Compo
 			return getServicefournis();
 		case AsaPackage.COMPOSANT__SERVICEREQUIS:
 			return getServicerequis();
+		case AsaPackage.COMPOSANT__NAME:
+			return getName();
 		case AsaPackage.COMPOSANT__PORTREQUISCOMPOSANT:
 			return getPortrequiscomposant();
 		case AsaPackage.COMPOSANT__PORTFOURNISCOMPOSANT:
 			return getPortfourniscomposant();
-		case AsaPackage.COMPOSANT__NAME:
-			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -320,6 +341,9 @@ public class ComposantImpl extends MinimalEObjectImpl.Container implements Compo
 			getServicerequis().clear();
 			getServicerequis().addAll((Collection<? extends ServiceRequis>) newValue);
 			return;
+		case AsaPackage.COMPOSANT__NAME:
+			setName((String) newValue);
+			return;
 		case AsaPackage.COMPOSANT__PORTREQUISCOMPOSANT:
 			getPortrequiscomposant().clear();
 			getPortrequiscomposant().addAll((Collection<? extends PortRequisComposant>) newValue);
@@ -327,9 +351,6 @@ public class ComposantImpl extends MinimalEObjectImpl.Container implements Compo
 		case AsaPackage.COMPOSANT__PORTFOURNISCOMPOSANT:
 			getPortfourniscomposant().clear();
 			getPortfourniscomposant().addAll((Collection<? extends PortFournisComposant>) newValue);
-			return;
-		case AsaPackage.COMPOSANT__NAME:
-			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -355,14 +376,14 @@ public class ComposantImpl extends MinimalEObjectImpl.Container implements Compo
 		case AsaPackage.COMPOSANT__SERVICEREQUIS:
 			getServicerequis().clear();
 			return;
+		case AsaPackage.COMPOSANT__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		case AsaPackage.COMPOSANT__PORTREQUISCOMPOSANT:
 			getPortrequiscomposant().clear();
 			return;
 		case AsaPackage.COMPOSANT__PORTFOURNISCOMPOSANT:
 			getPortfourniscomposant().clear();
-			return;
-		case AsaPackage.COMPOSANT__NAME:
-			setName(NAME_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -384,12 +405,12 @@ public class ComposantImpl extends MinimalEObjectImpl.Container implements Compo
 			return servicefournis != null && !servicefournis.isEmpty();
 		case AsaPackage.COMPOSANT__SERVICEREQUIS:
 			return servicerequis != null && !servicerequis.isEmpty();
+		case AsaPackage.COMPOSANT__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case AsaPackage.COMPOSANT__PORTREQUISCOMPOSANT:
 			return portrequiscomposant != null && !portrequiscomposant.isEmpty();
 		case AsaPackage.COMPOSANT__PORTFOURNISCOMPOSANT:
 			return portfourniscomposant != null && !portfourniscomposant.isEmpty();
-		case AsaPackage.COMPOSANT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -57,6 +57,8 @@ public class ConnecteurItemProvider extends ItemProviderAdapter implements IEdit
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addRolerequisPropertyDescriptor(object);
+			addRolefournisPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,6 +80,36 @@ public class ConnecteurItemProvider extends ItemProviderAdapter implements IEdit
 	}
 
 	/**
+	 * This adds a property descriptor for the Rolerequis feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolerequisPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Connecteur_rolerequis_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Connecteur_rolerequis_feature",
+								"_UI_Connecteur_type"),
+						AsaPackage.Literals.CONNECTEUR__ROLEREQUIS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Rolefournis feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRolefournisPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Connecteur_rolefournis_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Connecteur_rolefournis_feature",
+								"_UI_Connecteur_type"),
+						AsaPackage.Literals.CONNECTEUR__ROLEFOURNIS, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -90,8 +122,6 @@ public class ConnecteurItemProvider extends ItemProviderAdapter implements IEdit
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AsaPackage.Literals.CONNECTEUR__GLUE);
-			childrenFeatures.add(AsaPackage.Literals.CONNECTEUR__ROLEREQUIS);
-			childrenFeatures.add(AsaPackage.Literals.CONNECTEUR__ROLEFOURNIS);
 		}
 		return childrenFeatures;
 	}
@@ -159,8 +189,6 @@ public class ConnecteurItemProvider extends ItemProviderAdapter implements IEdit
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case AsaPackage.CONNECTEUR__GLUE:
-		case AsaPackage.CONNECTEUR__ROLEREQUIS:
-		case AsaPackage.CONNECTEUR__ROLEFOURNIS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -180,12 +208,6 @@ public class ConnecteurItemProvider extends ItemProviderAdapter implements IEdit
 
 		newChildDescriptors
 				.add(createChildParameter(AsaPackage.Literals.CONNECTEUR__GLUE, AsaFactory.eINSTANCE.createGlue()));
-
-		newChildDescriptors.add(createChildParameter(AsaPackage.Literals.CONNECTEUR__ROLEREQUIS,
-				AsaFactory.eINSTANCE.createRoleRequis()));
-
-		newChildDescriptors.add(createChildParameter(AsaPackage.Literals.CONNECTEUR__ROLEFOURNIS,
-				AsaFactory.eINSTANCE.createRoleFournis()));
 	}
 
 	/**

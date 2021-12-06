@@ -43,6 +43,7 @@ public class RoleFournisItemProvider extends RoleItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addAttachementPropertyDescriptor(object);
+			addConnecteurPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -60,6 +61,21 @@ public class RoleFournisItemProvider extends RoleItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_RoleFournis_attachement_feature",
 								"_UI_RoleFournis_type"),
 						AsaPackage.Literals.ROLE_FOURNIS__ATTACHEMENT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Connecteur feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConnecteurPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_RoleFournis_connecteur_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_RoleFournis_connecteur_feature",
+								"_UI_RoleFournis_type"),
+						AsaPackage.Literals.ROLE_FOURNIS__CONNECTEUR, true, false, true, null, null, null));
 	}
 
 	/**

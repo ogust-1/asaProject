@@ -16,9 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link asa.Connecteur#getGlue <em>Glue</em>}</li>
+ *   <li>{@link asa.Connecteur#getName <em>Name</em>}</li>
  *   <li>{@link asa.Connecteur#getRolerequis <em>Rolerequis</em>}</li>
  *   <li>{@link asa.Connecteur#getRolefournis <em>Rolefournis</em>}</li>
- *   <li>{@link asa.Connecteur#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see asa.AsaPackage#getConnecteur()
@@ -49,25 +49,29 @@ public interface Connecteur extends EObject {
 	void setGlue(Glue value);
 
 	/**
-	 * Returns the value of the '<em><b>Rolerequis</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Rolerequis</b></em>' reference list.
 	 * The list contents are of type {@link asa.RoleRequis}.
+	 * It is bidirectional and its opposite is '{@link asa.RoleRequis#getConnecteur <em>Connecteur</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rolerequis</em>' containment reference list.
+	 * @return the value of the '<em>Rolerequis</em>' reference list.
 	 * @see asa.AsaPackage#getConnecteur_Rolerequis()
-	 * @model containment="true" required="true"
+	 * @see asa.RoleRequis#getConnecteur
+	 * @model opposite="connecteur"
 	 * @generated
 	 */
 	EList<RoleRequis> getRolerequis();
 
 	/**
-	 * Returns the value of the '<em><b>Rolefournis</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Rolefournis</b></em>' reference list.
 	 * The list contents are of type {@link asa.RoleFournis}.
+	 * It is bidirectional and its opposite is '{@link asa.RoleFournis#getConnecteur <em>Connecteur</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rolefournis</em>' containment reference list.
+	 * @return the value of the '<em>Rolefournis</em>' reference list.
 	 * @see asa.AsaPackage#getConnecteur_Rolefournis()
-	 * @model containment="true" required="true"
+	 * @see asa.RoleFournis#getConnecteur
+	 * @model opposite="connecteur"
 	 * @generated
 	 */
 	EList<RoleFournis> getRolefournis();

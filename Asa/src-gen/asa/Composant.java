@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link asa.Composant#getProperties <em>Properties</em>}</li>
  *   <li>{@link asa.Composant#getServicefournis <em>Servicefournis</em>}</li>
  *   <li>{@link asa.Composant#getServicerequis <em>Servicerequis</em>}</li>
+ *   <li>{@link asa.Composant#getName <em>Name</em>}</li>
  *   <li>{@link asa.Composant#getPortrequiscomposant <em>Portrequiscomposant</em>}</li>
  *   <li>{@link asa.Composant#getPortfourniscomposant <em>Portfourniscomposant</em>}</li>
- *   <li>{@link asa.Composant#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see asa.AsaPackage#getComposant()
@@ -78,25 +78,29 @@ public interface Composant extends EObject {
 	EList<ServiceRequis> getServicerequis();
 
 	/**
-	 * Returns the value of the '<em><b>Portrequiscomposant</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Portrequiscomposant</b></em>' reference list.
 	 * The list contents are of type {@link asa.PortRequisComposant}.
+	 * It is bidirectional and its opposite is '{@link asa.PortRequisComposant#getComposant <em>Composant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portrequiscomposant</em>' containment reference list.
+	 * @return the value of the '<em>Portrequiscomposant</em>' reference list.
 	 * @see asa.AsaPackage#getComposant_Portrequiscomposant()
-	 * @model containment="true"
+	 * @see asa.PortRequisComposant#getComposant
+	 * @model opposite="composant"
 	 * @generated
 	 */
 	EList<PortRequisComposant> getPortrequiscomposant();
 
 	/**
-	 * Returns the value of the '<em><b>Portfourniscomposant</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Portfourniscomposant</b></em>' reference list.
 	 * The list contents are of type {@link asa.PortFournisComposant}.
+	 * It is bidirectional and its opposite is '{@link asa.PortFournisComposant#getComposant <em>Composant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portfourniscomposant</em>' containment reference list.
+	 * @return the value of the '<em>Portfourniscomposant</em>' reference list.
 	 * @see asa.AsaPackage#getComposant_Portfourniscomposant()
-	 * @model containment="true" required="true"
+	 * @see asa.PortFournisComposant#getComposant
+	 * @model opposite="composant"
 	 * @generated
 	 */
 	EList<PortFournisComposant> getPortfourniscomposant();

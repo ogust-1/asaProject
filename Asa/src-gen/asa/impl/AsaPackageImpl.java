@@ -305,6 +305,15 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPortFournisComposant_Composant() {
+		return (EReference) portFournisComposantEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPortRequisComposant() {
 		return portRequisComposantEClass;
 	}
@@ -325,6 +334,15 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 */
 	public EReference getPortRequisComposant_Attachement() {
 		return (EReference) portRequisComposantEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPortRequisComposant_Composant() {
+		return (EReference) portRequisComposantEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -404,6 +422,15 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoleFournis_Connecteur() {
+		return (EReference) roleFournisEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRoleRequis() {
 		return roleRequisEClass;
 	}
@@ -415,6 +442,15 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 */
 	public EReference getRoleRequis_Attachement() {
 		return (EReference) roleRequisEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRoleRequis_Connecteur() {
+		return (EReference) roleRequisEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -459,15 +495,6 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 * @generated
 	 */
 	public EReference getConnecteur_Rolerequis() {
-		return (EReference) connecteurEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConnecteur_Rolefournis() {
 		return (EReference) connecteurEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -476,8 +503,17 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getConnecteur_Rolefournis() {
+		return (EReference) connecteurEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getConnecteur_Name() {
-		return (EAttribute) connecteurEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) connecteurEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -531,15 +567,6 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 * @generated
 	 */
 	public EReference getComposant_Portrequiscomposant() {
-		return (EReference) composantEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getComposant_Portfourniscomposant() {
 		return (EReference) composantEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -548,8 +575,17 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getComposant_Portfourniscomposant() {
+		return (EReference) composantEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getComposant_Name() {
-		return (EAttribute) composantEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) composantEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -674,10 +710,12 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 		portFournisComposantEClass = createEClass(PORT_FOURNIS_COMPOSANT);
 		createEReference(portFournisComposantEClass, PORT_FOURNIS_COMPOSANT__BINDING);
 		createEReference(portFournisComposantEClass, PORT_FOURNIS_COMPOSANT__ATTACHEMENT);
+		createEReference(portFournisComposantEClass, PORT_FOURNIS_COMPOSANT__COMPOSANT);
 
 		portRequisComposantEClass = createEClass(PORT_REQUIS_COMPOSANT);
 		createEReference(portRequisComposantEClass, PORT_REQUIS_COMPOSANT__BINDING);
 		createEReference(portRequisComposantEClass, PORT_REQUIS_COMPOSANT__ATTACHEMENT);
+		createEReference(portRequisComposantEClass, PORT_REQUIS_COMPOSANT__COMPOSANT);
 
 		serviceEClass = createEClass(SERVICE);
 		createEAttribute(serviceEClass, SERVICE__NAME);
@@ -691,27 +729,29 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 
 		roleFournisEClass = createEClass(ROLE_FOURNIS);
 		createEReference(roleFournisEClass, ROLE_FOURNIS__ATTACHEMENT);
+		createEReference(roleFournisEClass, ROLE_FOURNIS__CONNECTEUR);
 
 		roleRequisEClass = createEClass(ROLE_REQUIS);
 		createEReference(roleRequisEClass, ROLE_REQUIS__ATTACHEMENT);
+		createEReference(roleRequisEClass, ROLE_REQUIS__CONNECTEUR);
 
 		glueEClass = createEClass(GLUE);
 		createEAttribute(glueEClass, GLUE__NAME);
 
 		connecteurEClass = createEClass(CONNECTEUR);
 		createEReference(connecteurEClass, CONNECTEUR__GLUE);
+		createEAttribute(connecteurEClass, CONNECTEUR__NAME);
 		createEReference(connecteurEClass, CONNECTEUR__ROLEREQUIS);
 		createEReference(connecteurEClass, CONNECTEUR__ROLEFOURNIS);
-		createEAttribute(connecteurEClass, CONNECTEUR__NAME);
 
 		composantEClass = createEClass(COMPOSANT);
 		createEReference(composantEClass, COMPOSANT__CONSTRAINT);
 		createEReference(composantEClass, COMPOSANT__PROPERTIES);
 		createEReference(composantEClass, COMPOSANT__SERVICEFOURNIS);
 		createEReference(composantEClass, COMPOSANT__SERVICEREQUIS);
+		createEAttribute(composantEClass, COMPOSANT__NAME);
 		createEReference(composantEClass, COMPOSANT__PORTREQUISCOMPOSANT);
 		createEReference(composantEClass, COMPOSANT__PORTFOURNISCOMPOSANT);
-		createEAttribute(composantEClass, COMPOSANT__NAME);
 
 		configurationEClass = createEClass(CONFIGURATION);
 		createEReference(configurationEClass, CONFIGURATION__PORTFOURNISCONFIGURATION);
@@ -793,6 +833,10 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 		initEReference(getPortFournisComposant_Attachement(), this.getRoleRequis(), this.getRoleRequis_Attachement(),
 				"attachement", null, 0, -1, PortFournisComposant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortFournisComposant_Composant(), this.getComposant(),
+				this.getComposant_Portfourniscomposant(), "composant", null, 1, 1, PortFournisComposant.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portRequisComposantEClass, PortRequisComposant.class, "PortRequisComposant", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -802,6 +846,9 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPortRequisComposant_Attachement(), this.getRoleFournis(), this.getRoleFournis_Attachement(),
 				"attachement", null, 0, -1, PortRequisComposant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortRequisComposant_Composant(), this.getComposant(), this.getComposant_Portrequiscomposant(),
+				"composant", null, 1, 1, PortRequisComposant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -824,6 +871,9 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 				this.getPortRequisComposant_Attachement(), "attachement", null, 0, -1, RoleFournis.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getRoleFournis_Connecteur(), this.getConnecteur(), this.getConnecteur_Rolefournis(),
+				"connecteur", null, 1, 1, RoleFournis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleRequisEClass, RoleRequis.class, "RoleRequis", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -831,6 +881,9 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 				this.getPortFournisComposant_Attachement(), "attachement", null, 0, -1, RoleRequis.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getRoleRequis_Connecteur(), this.getConnecteur(), this.getConnecteur_Rolerequis(), "connecteur",
+				null, 1, 1, RoleRequis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(glueEClass, Glue.class, "Glue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGlue_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Glue.class, !IS_TRANSIENT,
@@ -841,14 +894,14 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 		initEReference(getConnecteur_Glue(), this.getGlue(), null, "glue", null, 1, 1, Connecteur.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getConnecteur_Rolerequis(), this.getRoleRequis(), null, "rolerequis", null, 1, -1,
-				Connecteur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnecteur_Rolefournis(), this.getRoleFournis(), null, "rolefournis", null, 1, -1,
-				Connecteur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConnecteur_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Connecteur.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnecteur_Rolerequis(), this.getRoleRequis(), this.getRoleRequis_Connecteur(), "rolerequis",
+				null, 0, -1, Connecteur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnecteur_Rolefournis(), this.getRoleFournis(), this.getRoleFournis_Connecteur(),
+				"rolefournis", null, 0, -1, Connecteur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(composantEClass, Composant.class, "Composant", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -864,14 +917,16 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 		initEReference(getComposant_Servicerequis(), this.getServiceRequis(), null, "servicerequis", null, 0, -1,
 				Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComposant_Portrequiscomposant(), this.getPortRequisComposant(), null, "portrequiscomposant",
-				null, 0, -1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
-				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComposant_Portfourniscomposant(), this.getPortFournisComposant(), null,
-				"portfourniscomposant", null, 1, -1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComposant_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Composant.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComposant_Portrequiscomposant(), this.getPortRequisComposant(),
+				this.getPortRequisComposant_Composant(), "portrequiscomposant", null, 0, -1, Composant.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComposant_Portfourniscomposant(), this.getPortFournisComposant(),
+				this.getPortFournisComposant_Composant(), "portfourniscomposant", null, 0, -1, Composant.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

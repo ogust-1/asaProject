@@ -3,15 +3,18 @@
 package asa.impl;
 
 import asa.AsaPackage;
+import asa.Connecteur;
 import asa.PortRequisComposant;
 import asa.RoleFournis;
 
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -24,6 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link asa.impl.RoleFournisImpl#getAttachement <em>Attachement</em>}</li>
+ *   <li>{@link asa.impl.RoleFournisImpl#getConnecteur <em>Connecteur</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +42,16 @@ public class RoleFournisImpl extends RoleImpl implements RoleFournis {
 	 * @ordered
 	 */
 	protected EList<PortRequisComposant> attachement;
+
+	/**
+	 * The cached value of the '{@link #getConnecteur() <em>Connecteur</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnecteur()
+	 * @generated
+	 * @ordered
+	 */
+	protected Connecteur connecteur;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,12 +91,85 @@ public class RoleFournisImpl extends RoleImpl implements RoleFournis {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Connecteur getConnecteur() {
+		if (connecteur != null && connecteur.eIsProxy()) {
+			InternalEObject oldConnecteur = (InternalEObject) connecteur;
+			connecteur = (Connecteur) eResolveProxy(oldConnecteur);
+			if (connecteur != oldConnecteur) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AsaPackage.ROLE_FOURNIS__CONNECTEUR,
+							oldConnecteur, connecteur));
+			}
+		}
+		return connecteur;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Connecteur basicGetConnecteur() {
+		return connecteur;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConnecteur(Connecteur newConnecteur, NotificationChain msgs) {
+		Connecteur oldConnecteur = connecteur;
+		connecteur = newConnecteur;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					AsaPackage.ROLE_FOURNIS__CONNECTEUR, oldConnecteur, newConnecteur);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConnecteur(Connecteur newConnecteur) {
+		if (newConnecteur != connecteur) {
+			NotificationChain msgs = null;
+			if (connecteur != null)
+				msgs = ((InternalEObject) connecteur).eInverseRemove(this, AsaPackage.CONNECTEUR__ROLEFOURNIS,
+						Connecteur.class, msgs);
+			if (newConnecteur != null)
+				msgs = ((InternalEObject) newConnecteur).eInverseAdd(this, AsaPackage.CONNECTEUR__ROLEFOURNIS,
+						Connecteur.class, msgs);
+			msgs = basicSetConnecteur(newConnecteur, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AsaPackage.ROLE_FOURNIS__CONNECTEUR, newConnecteur,
+					newConnecteur));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case AsaPackage.ROLE_FOURNIS__ATTACHEMENT:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAttachement()).basicAdd(otherEnd, msgs);
+		case AsaPackage.ROLE_FOURNIS__CONNECTEUR:
+			if (connecteur != null)
+				msgs = ((InternalEObject) connecteur).eInverseRemove(this, AsaPackage.CONNECTEUR__ROLEFOURNIS,
+						Connecteur.class, msgs);
+			return basicSetConnecteur((Connecteur) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -97,6 +184,8 @@ public class RoleFournisImpl extends RoleImpl implements RoleFournis {
 		switch (featureID) {
 		case AsaPackage.ROLE_FOURNIS__ATTACHEMENT:
 			return ((InternalEList<?>) getAttachement()).basicRemove(otherEnd, msgs);
+		case AsaPackage.ROLE_FOURNIS__CONNECTEUR:
+			return basicSetConnecteur(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -111,6 +200,10 @@ public class RoleFournisImpl extends RoleImpl implements RoleFournis {
 		switch (featureID) {
 		case AsaPackage.ROLE_FOURNIS__ATTACHEMENT:
 			return getAttachement();
+		case AsaPackage.ROLE_FOURNIS__CONNECTEUR:
+			if (resolve)
+				return getConnecteur();
+			return basicGetConnecteur();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -128,6 +221,9 @@ public class RoleFournisImpl extends RoleImpl implements RoleFournis {
 			getAttachement().clear();
 			getAttachement().addAll((Collection<? extends PortRequisComposant>) newValue);
 			return;
+		case AsaPackage.ROLE_FOURNIS__CONNECTEUR:
+			setConnecteur((Connecteur) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -143,6 +239,9 @@ public class RoleFournisImpl extends RoleImpl implements RoleFournis {
 		case AsaPackage.ROLE_FOURNIS__ATTACHEMENT:
 			getAttachement().clear();
 			return;
+		case AsaPackage.ROLE_FOURNIS__CONNECTEUR:
+			setConnecteur((Connecteur) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -157,6 +256,8 @@ public class RoleFournisImpl extends RoleImpl implements RoleFournis {
 		switch (featureID) {
 		case AsaPackage.ROLE_FOURNIS__ATTACHEMENT:
 			return attachement != null && !attachement.isEmpty();
+		case AsaPackage.ROLE_FOURNIS__CONNECTEUR:
+			return connecteur != null;
 		}
 		return super.eIsSet(featureID);
 	}

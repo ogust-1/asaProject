@@ -22,6 +22,9 @@ public class SecurityManager extends ComposantImpl {
 		
 		in=factory.createPortRequisComposant();
 		out=factory.createPortFournisComposant();
+		
+		in.setComposant(this);
+		out.setComposant(this);
 
 		this.getPortrequiscomposant().add(in);
 		this.getPortfourniscomposant().add(out);
@@ -41,6 +44,16 @@ public class SecurityManager extends ComposantImpl {
 	
 	public void setRoleOut(RoleRequis roleRequis) {
 		out.getAttachement().add(roleRequis);
+	}
+	
+	public void reponseDataBase(String s, Boolean b) {
+		ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
+		c.glue(s,b);
+	}
+	
+	public void interrogationDataBase(Client c) {
+		ConnecteurSecurity2Database co= (ConnecteurSecurity2Database)out.getAttachement().get(0).getConnecteur();
+		co.glue( c);
 	}
 
 }

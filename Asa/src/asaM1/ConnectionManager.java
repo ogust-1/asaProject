@@ -15,13 +15,17 @@ public class ConnectionManager extends ComposantImpl{
 	AsaFactory factory= aPackage.getAsaFactory();
 	
 	private PortRequisComposant in;
-	private PortFournisComposant out;
+	private PortFournisComposant out; 
+	private boolean autorized;
+	String name;
 	
 	public ConnectionManager() {
 		super();
 		this.setName("connectionManager");
 		out = factory.createPortFournisComposant();
 		in = factory.createPortRequisComposant();
+		in.setComposant(this);
+		out.setComposant(this);
 		this.getPortrequiscomposant().add(in);
 		this.getPortfourniscomposant().add(out);
 	}
@@ -48,5 +52,31 @@ public class ConnectionManager extends ComposantImpl{
 	
 	public void SetBindingOut(PortRequisConfiguration portRequisConfig) {
 		out.getBinding().add(portRequisConfig);
+	}
+	
+	public void reponseDatabse(String name) {
+		this.name=name;
+		System.out.println("name");
+	}
+	
+	public void reponseSecurity(String s, Boolean b) {
+		this.autorized=b;
+		System.out.println(s);
+		
+	}
+	
+	public void InterrogationDatabase (Client c, int i) {
+		InterrogationSecurity(c);
+		if (this.autorized) {
+		ConnecteurConnection2Database co=(ConnecteurConnection2Database) out.getAttachement().get(1).getConnecteur();
+		co.glue(i);
+		}
+	}
+	
+	public void InterrogationSecurity(Client c) {
+		ConnecteurConnection2Security co=(ConnecteurConnection2Security) out.getAttachement().get(0).getConnecteur();
+		co.glue(c);
+		System.out.println("requete envoyé au security");
+		
 	}
 }

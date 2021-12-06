@@ -44,6 +44,7 @@ public class PortRequisComposantItemProvider extends PortItemProvider {
 
 			addBindingPropertyDescriptor(object);
 			addAttachementPropertyDescriptor(object);
+			addComposantPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,6 +77,21 @@ public class PortRequisComposantItemProvider extends PortItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_PortRequisComposant_attachement_feature",
 								"_UI_PortRequisComposant_type"),
 						AsaPackage.Literals.PORT_REQUIS_COMPOSANT__ATTACHEMENT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Composant feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addComposantPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_PortRequisComposant_composant_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PortRequisComposant_composant_feature",
+								"_UI_PortRequisComposant_type"),
+						AsaPackage.Literals.PORT_REQUIS_COMPOSANT__COMPOSANT, true, false, true, null, null, null));
 	}
 
 	/**

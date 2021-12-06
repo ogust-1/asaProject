@@ -15,14 +15,14 @@ public class ConnecteurConnection2Database extends ConnecteurImpl{
 	
 	private RoleFournis out;
 	private RoleRequis in;
-	private Glue glue;
 	
 	public ConnecteurConnection2Database() {
 		super();
 		this.setName("Connecteur_to_database");
 		in = factory.createRoleRequis();
 		out = factory.createRoleFournis();
-		glue = factory.createGlue();
+		in.setConnecteur(this);
+		out.setConnecteur(this);
 		this.getRolerequis().add(in);
 		this.getRolefournis().add(out);
 	}
@@ -41,6 +41,11 @@ public class ConnecteurConnection2Database extends ConnecteurImpl{
 	
 	public void setPortOut(PortRequisComposant portRequis) {
 		out.getAttachement().add(portRequis);
+	}
+	
+	public void glue(int i ) {
+		Database d=(Database) out.getAttachement().get(0).getComposant();
+		d.serviceConnection(i);
 	}
 	
 }

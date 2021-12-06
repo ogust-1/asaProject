@@ -1,0 +1,74 @@
+package asaM1;
+
+import asa.impl.*;
+
+import java.util.ArrayList;
+
+import asa.AsaFactory;
+import asa.AsaPackage;
+import asa.PortFournisComposant;
+import asa.PortRequisComposant;
+import asa.RoleFournis;
+import asa.RoleRequis;
+
+public class Database extends ComposantImpl {
+	
+	AsaPackage aPackage=AsaPackage.eINSTANCE;
+	AsaFactory factory= aPackage.getAsaFactory();
+	private PortRequisComposant in;
+	private PortFournisComposant out;
+	private ArrayList<Client> BDClient;
+	
+	
+	public Database() {
+		super();
+		this.setName("dataBase");
+		in=factory.createPortRequisComposant();
+		out=factory.createPortFournisComposant();
+		this.getPortrequiscomposant().add(in);
+		this.getPortfourniscomposant().add(out);
+		this.BDClient=new ArrayList<>();
+		
+	}
+	
+	public PortRequisComposant getIn(){
+		//return this.getPortrequiscomposant().get(0);
+		return this.in;
+	}
+	
+	public PortFournisComposant getOut() {
+		return this.out;
+	}	
+	
+	public void setRoleIn(RoleFournis roleFournis ) {
+		in.getAttachement().add(roleFournis);
+	}
+	
+	public void setRoleOut(RoleRequis roleRequis) {
+		out.getAttachement().add(roleRequis);
+	}
+	
+	public void addClient(Client client) {
+		this.BDClient.add(client);
+	}
+	
+	public Client numClient(int i) {
+		return BDClient.get(i);
+	}
+	
+	public boolean clientIsPresent(Client client) {
+		return BDClient.contains(client);
+	}
+	
+	
+	public void sentReponse2Connection(int i) {		
+		//this.out.getAttachement().get(1).getComponent.glue(numClient (i));
+		//System.out.println("reponse de la bd envoyé");
+	}
+	
+	public void sentResponse2Security(Client client) {
+		//this.out.getAttachement().get(0).getComponent.glue(clientIsPresent(client));
+		//System.out.println("reponse de le security envoyé");
+	}
+	
+}

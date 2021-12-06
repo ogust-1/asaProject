@@ -1,9 +1,0 @@
-package asaM1;
-import asa.impl.ComposantImpl;
-
-public class Client extends ComposantImpl{
-	
-	public Client() {
-		super();
-	}
-}

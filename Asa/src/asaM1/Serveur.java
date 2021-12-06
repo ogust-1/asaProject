@@ -17,16 +17,20 @@ public class Serveur extends ConfigurationImpl{
 	private SecurityManager securityManager;
 	private ConnectionManager connectionManager;
 	
-	//private ConnecteurDatabase2Security dataBase2Security;
-	//private ConnecteurConnection2Database connection2DataBase;
-	//private ConnecteurConnection2Security connection2Security;
+	private ConnecteurDatabase2Security dataBase2Security;
+	private ConnecteurDatabase2Connection dataBase2Connection;
+	private ConnecteurConnection2Database connection2DataBase;
+	private ConnecteurConnection2Security connection2Security;
+	private ConnecteurSecurity2Connection security2Connection;
+	private ConnecteurSecurity2Database security2DataBase;
 	
-	private ConnecteurServeur dataBase2Security;
-	private ConnecteurServeur dataBase2Connection;
+	/*private ConnecteurServeur dataBase2Security;
+	//private ConnecteurServeur dataBase2Connection;
+	private ConnecteurDatabase2Connection dataBase2Connection;
 	private ConnecteurServeur security2DataBase;
 	private ConnecteurServeur security2Connection;
 	private ConnecteurServeur connection2Security;
-	private ConnecteurServeur connection2DataBase;
+	private ConnecteurServeur connection2DataBase;*/
 	
 	
 	
@@ -37,6 +41,8 @@ public class Serveur extends ConfigurationImpl{
 		outExt=factory.createPortFournisComposant();
 		out=factory.createPortFournisConfiguration();
 		in=factory.createPortRequisConfiguration();
+		inExt.setComposant(this);
+		outExt.setComposant(this);
 		
 		
 		dataBase=new Database();
@@ -50,27 +56,34 @@ public class Serveur extends ConfigurationImpl{
 		connection2DataBase=new ConnecteurConnection2Database();
 		connection2Security=new ConnecteurConnection2Security();*/
 		
-		dataBase2Security=new ConnecteurServeur();
-		dataBase2Connection=new ConnecteurServeur();
+		/*dataBase2Security=new ConnecteurServeur();
+		//dataBase2Connection=new ConnecteurServeur();
 		connection2DataBase=new ConnecteurServeur();
 		connection2Security=new ConnecteurServeur();
 		security2Connection= new ConnecteurServeur();
-		security2DataBase= new ConnecteurServeur();
+		security2DataBase= new ConnecteurServeur();*/
+		
+		dataBase2Security=new ConnecteurDatabase2Security();
+		dataBase2Connection=new ConnecteurDatabase2Connection();
+		connection2DataBase=new ConnecteurConnection2Database();
+		connection2Security=new ConnecteurConnection2Security();
+		security2Connection= new ConnecteurSecurity2Connection();
+		security2DataBase= new ConnecteurSecurity2Database();
 		
 		//connectiondes composants internes
-		dataBase.setRoleIn(dataBase2Security.GetOut());
+		dataBase.setRoleIn(security2DataBase.GetOut());
 		dataBase.setRoleOut(dataBase2Security.getIn());
-		dataBase.setRoleIn(dataBase2Connection.GetOut());
+		dataBase.setRoleIn(connection2DataBase.GetOut());
 		dataBase.setRoleOut(dataBase2Connection.getIn());
 		
-		securityManager.setRoleIn(security2DataBase.GetOut());
+		securityManager.setRoleIn(dataBase2Security.GetOut());
 		securityManager.setRoleOut(security2DataBase.getIn());
-		securityManager.setRoleIn(security2Connection.GetOut());
+		securityManager.setRoleIn(connection2Security.GetOut());
 		securityManager.setRoleOut(security2Connection.getIn());
 		
-		connectionManager.setRoleIn(connection2Security.GetOut());
+		connectionManager.setRoleIn(security2Connection.GetOut());
 		connectionManager.setRoleOut(connection2Security.getIn());
-		connectionManager.setRoleIn(connection2DataBase.GetOut());
+		connectionManager.setRoleIn(dataBase2Connection.GetOut());
 		connectionManager.setRoleOut(connection2DataBase.getIn());		
 		
 		//connexion du serveur
@@ -81,12 +94,16 @@ public class Serveur extends ConfigurationImpl{
 		
 	}
 	
-	public ConnecteurServeur getTest() {
+	public ConnecteurDatabase2Security getTest() {
 		return this.dataBase2Security;
 	}
 	
 	public Database getData() {
 		return this.dataBase;
+	}
+	
+	public ConnectionManager getCOnnection() {
+		return this.connectionManager;
 	}
 	
 	public PortRequisComposant getInExt() {
