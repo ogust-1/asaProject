@@ -51,22 +51,21 @@ public class Serveur extends ConfigurationImpl{
 		connection2Security=new ConnecteurConnection2Security();*/
 		
 		dataBase2Security=new ConnecteurServeur();
-		dataBase2Connection=new ConnecteurServeur();
 		connection2DataBase=new ConnecteurServeur();
 		connection2Security=new ConnecteurServeur();
-		security2Connection= new ConnecteurServeur();
-		security2DataBase= new ConnecteurServeur();
 		
 		//connectiondes composants internes
 		dataBase.setRoleIn(dataBase2Security.GetOut());
+		//dataBase2Security.setPortOut(dataBase.getIn());
 		dataBase.setRoleOut(dataBase2Security.getIn());
-		dataBase.setRoleIn(dataBase2Connection.GetOut());
-		dataBase.setRoleOut(dataBase2Connection.getIn());
+		//dataBase2Security.setPortIn(dataBase.getOut());
+		dataBase.setRoleIn(connection2DataBase.GetOut());
+		dataBase.setRoleOut(connection2DataBase.getIn());
 		
-		securityManager.setRoleIn(security2DataBase.GetOut());
-		securityManager.setRoleOut(security2DataBase.getIn());
-		securityManager.setRoleIn(security2Connection.GetOut());
-		securityManager.setRoleOut(security2Connection.getIn());
+		securityManager.setRoleIn(dataBase2Security.GetOut());
+		securityManager.setRoleOut(dataBase2Security.getIn());
+		securityManager.setRoleIn(connection2Security.GetOut());
+		securityManager.setRoleOut(connection2DataBase.getIn());
 		
 		connectionManager.setRoleIn(connection2Security.GetOut());
 		connectionManager.setRoleOut(connection2Security.getIn());

@@ -63,10 +63,10 @@ public class Serveur extends ConfigurationImpl{
 		dataBase.setRoleIn(dataBase2Connection.GetOut());
 		dataBase.setRoleOut(dataBase2Connection.getIn());
 		
-		securityManager.setRoleIn(security2DataBase.GetOut());
-		securityManager.setRoleOut(security2DataBase.getIn());
-		securityManager.setRoleIn(security2Connection.GetOut());
-		securityManager.setRoleOut(security2Connection.getIn());
+		securityManager.setRoleIn(dataBase2Security.GetOut());
+		securityManager.setRoleOut(dataBase2Security.getIn());
+		securityManager.setRoleIn(connection2Security.GetOut());
+		securityManager.setRoleOut(connection2DataBase.getIn());
 		
 		connectionManager.setRoleIn(connection2Security.GetOut());
 		connectionManager.setRoleOut(connection2Security.getIn());

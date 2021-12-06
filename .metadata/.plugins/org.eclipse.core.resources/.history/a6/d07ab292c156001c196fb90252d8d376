@@ -1,0 +1,18 @@
+package asaM1;
+
+import asa.AsaFactory;
+import asa.AsaPackage;
+import asa.Glue;
+import asa.RoleFournis;
+import asa.RoleRequis;
+import asa.impl.ConnecteurImpl;
+
+public class ConnecteurServeur extends ConnecteurImpl {
+	AsaPackage aPackage=AsaPackage.eINSTANCE;
+	AsaFactory factory= aPackage.getAsaFactory();
+	
+	private RoleRequis in;
+	private RoleFournis out;
+	private Glue glue;
+
+}
