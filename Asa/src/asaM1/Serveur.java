@@ -4,18 +4,24 @@ import asa.*;
 import asa.impl.*;
 
 public class Serveur extends ConfigurationImpl{
+
+	AsaPackage aPackage=AsaPackage.eINSTANCE;
+	AsaFactory factory= aPackage.getAsaFactory();
 	
-	private PortRequisComposantImpl sRequis;
-	private PortFournisComposantImpl sFournis;
-	private PortRequisConfigurationImpl sServeurOut;
-	private PortFournisConfigurationImpl sServeurIn;
+	private PortRequisComposant sRequis;
+	private PortFournisComposant sFournis;
+	private PortRequisConfiguration out;
+	private PortFournisConfiguration in;
 	
 	
 	
-	public Serveur (String name) {
+	public Serveur () {
 		super();
-		this.setName(name);
-		
+		this.setName("Serveur");
+		sRequis=factory.createPortRequisComposant();
+		sFournis=factory.createPortFournisComposant();
+		in=factory.createPortFournisConfiguration();
+		out=factory.createPortRequisConfiguration();
 		
 	}
 
