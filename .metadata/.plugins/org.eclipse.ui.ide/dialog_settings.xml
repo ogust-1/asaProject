@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="org.eclipse.draw2d:3.10.100.201606061308"/>
+		<item value="org.eclipse.emf.common:2.21.0.v20200917-1439"/>
+		<item value="org.eclipse.emf.ecore.edit:2.14.0.v20190822-1451"/>
+		<item value="org.eclipse.emf.ecore.xcore.lib:1.6.0.v20200630-0516"/>
+		<item value="org.eclipse.emf.ecore.xcore.ui:1.15.0.v20201105-0712"/>
+		<item value="org.eclipse.emf.ecore.xcore:1.16.0.v20201105-0712"/>
+		<item value="org.eclipse.emf.ecore:2.23.0.v20200630-0516"/>
+		<item value="org.eclipse.emf.ecoretools.design:3.3.3.202010261352"/>
+		<item value="org.eclipse.emf.edit:2.16.0.v20190920-0401"/>
+		<item value="org.eclipse.emf.transaction:1.12.0.201805140824"/>
+		<item value="org.eclipse.emf.validation:1.12.2.202008210805"/>
+		<item value="org.eclipse.emf.workspace:1.12.0.201805140824"/>
+		<item value="org.eclipse.epp.mpc:1.9.0.v20201125-0811"/>
+		<item value="org.eclipse.gef:3.11.0.201606061308"/>
+		<item value="org.eclipse.gmf.runtime.notation:1.13.0.202004160913"/>
+		<item value="org.eclipse.gmf:1.13.0.202004160913"/>
+		<item value="org.eclipse.help:2.3.400.v20201119-0730"/>
+		<item value="org.eclipse.jdt:3.18.600.v20201119-0730"/>
+		<item value="org.eclipse.m2m.atl.doc:4.2.1.v202006221222"/>
+		<item value="org.eclipse.m2m.atl.emftvm:4.2.1.v202006221222"/>
+		<item value="org.eclipse.m2m.atl.examples:4.2.1.v202006221222"/>
+		<item value="org.eclipse.m2m.atl:4.2.1.v202006221222"/>
+		<item value="org.eclipse.pde:3.14.600.v20201119-1215"/>
+		<item value="org.eclipse.platform:4.18.0.v20201119-1132"/>
+		<item value="org.eclipse.rcp:4.18.0.v20201119-1132"/>
+		<item value="org.eclipse.sirius.properties.feature:6.4.0.202011101257"/>
+		<item value="org.eclipse.sirius.runtime.aql:6.4.0.202011101257"/>
+		<item value="org.eclipse.sirius.runtime.ide.ui:6.4.0.202011101257"/>
+		<item value="org.eclipse.sirius.runtime:6.4.0.202011101257"/>
+		<item value="org.eclipse.sirius.specifier:6.4.0.202011101257"/>
+		<item value="org.eclipse.userstorage:1.2.0.v20191120-1614"/>
+		<item value="org.eclipse.xtend.sdk:2.24.0.v20201130-1016"/>
+		<item value="org.eclipse.xtext.sdk:2.24.0.v20201130-1016"/>
+		<item value="org.eclipse.xtext.ui:2.24.0.v20201130-1016"/>
+		<item value="org.eclipse.xtext.xbase.lib:2.24.0.v20201130-0912"/>
+		<item value="org.eclipse.xtext.xbase:2.24.0.v20201130-1016"/>
+		<item value="org.eclipse.xtext.xtext.ui.graph:2.24.0.v20201130-1016"/>
+		<item value="org.eclipse.xtext.xtext.ui:2.24.0.v20201130-1016"/>
+	</list>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.pde.ui.NewProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.acceleo.ide.ui"/>
+			<item value="atlWizard"/>
+			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
+			<item value="org.eclipse.pde.PDE"/>
+			<item value="org.eclipse.ui.Examples"/>
+			<item value="org.eclipse.ui.Examples/org.eclipse.m2m.atl.examples.category"/>
+		</list>
+	</section>
+</section>

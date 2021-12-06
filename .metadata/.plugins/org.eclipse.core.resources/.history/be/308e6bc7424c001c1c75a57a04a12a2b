@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="asa" nsURI="http://www.example.org/asa" nsPrefix="asa">
+  <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortFournisConfiguration" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortRequisConfiguration" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortFournisComposant" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortRequisComposant" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Service" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceFournis" eSuperTypes="#//Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceRequis" eSuperTypes="#//Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleFournis" eSuperTypes="#//Role"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleRequis" eSuperTypes="#//Role"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Glue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Connecteur">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="glue" lowerBound="1" eType="#//Glue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolerequis" lowerBound="1"
+        upperBound="-1" eType="#//RoleRequis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolefournis" lowerBound="1"
+        upperBound="-1" eType="#//RoleFournis" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Composant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Configuration"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Properties"/>
+</ecore:EPackage>

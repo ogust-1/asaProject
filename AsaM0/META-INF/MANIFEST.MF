@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AsaM0
+Bundle-SymbolicName: AsaM0
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: AsaM0
+Bundle-RequiredExecutionEnvironment: JavaSE-11

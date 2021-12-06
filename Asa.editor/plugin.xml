@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated asa -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="asa.presentation.AsaModelWizardID"
+            name="%_UI_AsaModelWizard_label"
+            class="asa.presentation.AsaModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AsaModelFile.gif">
+         <description>%_UI_AsaModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated asa -->
+      <editor
+            id="asa.presentation.AsaEditorID"
+            name="%_UI_AsaEditor_label"
+            icon="icons/full/obj16/AsaModelFile.gif"
+            extensions="asa"
+            class="asa.presentation.AsaEditor"
+            contributorClass="asa.presentation.AsaActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,10 @@
+package asaM1;
+import asa.impl.*;
+
+public class Server extends ComposantImpl{
+	
+	public Server() {
+		super();
+	}
+
+}

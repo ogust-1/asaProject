@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Asa/src-gen" creationIcons="false" editDirectory="/Asa.edit/src-gen"
+    editorDirectory="/Asa.editor/src-gen" modelPluginID="Asa" modelName="Asa" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>asa.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Asa" disposableProviderFactory="true" ecorePackage="asa.ecore#/">
+    <genClasses ecoreClass="asa.ecore#//Port"/>
+    <genClasses ecoreClass="asa.ecore#//PortFournisConfiguration"/>
+    <genClasses ecoreClass="asa.ecore#//PortRequisConfiguration"/>
+    <genClasses ecoreClass="asa.ecore#//PortFournisComposant"/>
+    <genClasses ecoreClass="asa.ecore#//PortRequisComposant"/>
+    <genClasses ecoreClass="asa.ecore#//Service"/>
+    <genClasses ecoreClass="asa.ecore#//ServiceFournis"/>
+    <genClasses ecoreClass="asa.ecore#//ServiceRequis"/>
+  </genPackages>
+</genmodel:GenModel>

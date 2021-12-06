@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="asa" nsURI="http://www.example.org/asa" nsPrefix="asa">
+  <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortFournisConfiguration" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequiscomposant" lowerBound="1"
+        eType="#//PortRequisComposant" eOpposite="#//PortRequisComposant/portfournisconfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortRequisConfiguration" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portfourniscomposant" lowerBound="1"
+        eType="#//PortFournisComposant" eOpposite="#//PortFournisComposant/portrequisconfiguration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortFournisComposant" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisconfiguration"
+        lowerBound="1" eType="#//PortRequisConfiguration" eOpposite="#//PortRequisConfiguration/portfourniscomposant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolerequis" lowerBound="1"
+        eType="#//RoleRequis" eOpposite="#//RoleRequis/portfourniscomposant"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortRequisComposant" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portfournisconfiguration"
+        eType="#//PortFournisConfiguration" eOpposite="#//PortFournisConfiguration/portrequiscomposant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolefournis" lowerBound="1"
+        eType="#//RoleFournis" eOpposite="#//RoleFournis/portrequiscomposant"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Service" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceFournis" eSuperTypes="#//Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceRequis" eSuperTypes="#//Service"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleFournis" eSuperTypes="#//Role">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequiscomposant" lowerBound="1"
+        eType="#//PortRequisComposant" eOpposite="#//PortRequisComposant/rolefournis"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleRequis" eSuperTypes="#//Role">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portfourniscomposant" lowerBound="1"
+        eType="#//PortFournisComposant" eOpposite="#//PortFournisComposant/rolerequis"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Glue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connecteur">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="glue" lowerBound="1" eType="#//Glue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolerequis" lowerBound="1"
+        upperBound="-1" eType="#//RoleRequis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rolefournis" lowerBound="1"
+        upperBound="-1" eType="#//RoleFournis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Composant">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Properties" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servicefournis" lowerBound="1"
+        upperBound="-1" eType="#//ServiceFournis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servicerequis" upperBound="-1"
+        eType="#//ServiceRequis" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequiscomposant" upperBound="-1"
+        eType="#//PortRequisComposant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portfourniscomposant" lowerBound="1"
+        upperBound="-1" eType="#//PortFournisComposant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Configuration" eSuperTypes="#//Composant">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portfournisconfiguration"
+        lowerBound="1" upperBound="-1" eType="#//PortFournisConfiguration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisconfiguration"
+        lowerBound="1" upperBound="-1" eType="#//PortRequisConfiguration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composant" upperBound="-1"
+        eType="#//Composant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Properties">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

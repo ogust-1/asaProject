@@ -1,0 +1,9 @@
+package asaM1;
+import asa.impl.*;
+
+public class SecurityManager extends ComposantImpl{
+	
+	public SecurityManager() {
+		super();
+	}
+}

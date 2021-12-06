@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/Asa/src-gen" creationIcons="false" editDirectory="/Asa.edit/src-gen"
+    editorDirectory="/Asa.editor/src-gen" modelPluginID="Asa" modelName="Asa" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>asa.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Asa" disposableProviderFactory="true" ecorePackage="asa.ecore#/">
+    <genClasses ecoreClass="asa.ecore#//Port"/>
+    <genClasses ecoreClass="asa.ecore#//PortFournisConfiguration"/>
+    <genClasses ecoreClass="asa.ecore#//PortRequisConfiguration"/>
+    <genClasses ecoreClass="asa.ecore#//PortFournisComposant"/>
+    <genClasses ecoreClass="asa.ecore#//PortRequisComposant"/>
+    <genClasses ecoreClass="asa.ecore#//Service"/>
+    <genClasses ecoreClass="asa.ecore#//ServiceFournis"/>
+    <genClasses ecoreClass="asa.ecore#//ServiceRequis"/>
+    <genClasses ecoreClass="asa.ecore#//Role"/>
+    <genClasses ecoreClass="asa.ecore#//RoleFournis"/>
+    <genClasses ecoreClass="asa.ecore#//RoleRequis"/>
+    <genClasses ecoreClass="asa.ecore#//Glue"/>
+    <genClasses ecoreClass="asa.ecore#//Connecteur">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Connecteur/glue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Connecteur/rolerequis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Connecteur/rolefournis"/>
+    </genClasses>
+    <genClasses ecoreClass="asa.ecore#//Composant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/constraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/composant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/servicefournis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/servicerequis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/portrequiscomposant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/portfourniscomposant"/>
+    </genClasses>
+    <genClasses ecoreClass="asa.ecore#//Configuration"/>
+    <genClasses ecoreClass="asa.ecore#//Constraint"/>
+    <genClasses ecoreClass="asa.ecore#//Properties"/>
+  </genPackages>
+</genmodel:GenModel>

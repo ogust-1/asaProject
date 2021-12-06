@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;M1&apos; to &apos;asaM1&apos;&#x0D;&#x0A;- Original project: &apos;Asa&apos;&#x0D;&#x0A;- Original element: &apos;Asa/src-gen/M1&apos;&#x0D;&#x0A;- Renamed element: &apos;Asa/src-gen/asaM1&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;M1&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src-gen&lt;M1" name="asaM1" qualified="false" references="true" stamp="1638193122922" textual="false" version="1.0"/>
+</session>
