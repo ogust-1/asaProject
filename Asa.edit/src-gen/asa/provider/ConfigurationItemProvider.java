@@ -12,6 +12,7 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -43,8 +44,40 @@ public class ConfigurationItemProvider extends ComposantItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addPortfournisconfigurationPropertyDescriptor(object);
+			addPortrequisconfigurationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Portfournisconfiguration feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortfournisconfigurationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Configuration_portfournisconfiguration_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Configuration_portfournisconfiguration_feature",
+						"_UI_Configuration_type"),
+				AsaPackage.Literals.CONFIGURATION__PORTFOURNISCONFIGURATION, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Portrequisconfiguration feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPortrequisconfigurationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_Configuration_portrequisconfiguration_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Configuration_portrequisconfiguration_feature",
+						"_UI_Configuration_type"),
+				AsaPackage.Literals.CONFIGURATION__PORTREQUISCONFIGURATION, true, false, true, null, null, null));
 	}
 
 	/**
@@ -59,8 +92,6 @@ public class ConfigurationItemProvider extends ComposantItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(AsaPackage.Literals.CONFIGURATION__PORTFOURNISCONFIGURATION);
-			childrenFeatures.add(AsaPackage.Literals.CONFIGURATION__PORTREQUISCONFIGURATION);
 			childrenFeatures.add(AsaPackage.Literals.CONFIGURATION__COMPOSANT);
 			childrenFeatures.add(AsaPackage.Literals.CONFIGURATION__CONNECTEUR);
 		}
@@ -126,8 +157,6 @@ public class ConfigurationItemProvider extends ComposantItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Configuration.class)) {
-		case AsaPackage.CONFIGURATION__PORTFOURNISCONFIGURATION:
-		case AsaPackage.CONFIGURATION__PORTREQUISCONFIGURATION:
 		case AsaPackage.CONFIGURATION__COMPOSANT:
 		case AsaPackage.CONFIGURATION__CONNECTEUR:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -146,12 +175,6 @@ public class ConfigurationItemProvider extends ComposantItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(AsaPackage.Literals.CONFIGURATION__PORTFOURNISCONFIGURATION,
-				AsaFactory.eINSTANCE.createPortFournisConfiguration()));
-
-		newChildDescriptors.add(createChildParameter(AsaPackage.Literals.CONFIGURATION__PORTREQUISCONFIGURATION,
-				AsaFactory.eINSTANCE.createPortRequisConfiguration()));
 
 		newChildDescriptors.add(createChildParameter(AsaPackage.Literals.CONFIGURATION__COMPOSANT,
 				AsaFactory.eINSTANCE.createComposant()));

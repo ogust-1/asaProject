@@ -13,10 +13,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link asa.Configuration#getPortfournisconfiguration <em>Portfournisconfiguration</em>}</li>
- *   <li>{@link asa.Configuration#getPortrequisconfiguration <em>Portrequisconfiguration</em>}</li>
  *   <li>{@link asa.Configuration#getComposant <em>Composant</em>}</li>
  *   <li>{@link asa.Configuration#getConnecteur <em>Connecteur</em>}</li>
+ *   <li>{@link asa.Configuration#getPortfournisconfiguration <em>Portfournisconfiguration</em>}</li>
+ *   <li>{@link asa.Configuration#getPortrequisconfiguration <em>Portrequisconfiguration</em>}</li>
  * </ul>
  *
  * @see asa.AsaPackage#getConfiguration()
@@ -25,25 +25,29 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Configuration extends Composant {
 	/**
-	 * Returns the value of the '<em><b>Portfournisconfiguration</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Portfournisconfiguration</b></em>' reference list.
 	 * The list contents are of type {@link asa.PortFournisConfiguration}.
+	 * It is bidirectional and its opposite is '{@link asa.PortFournisConfiguration#getConfiguration <em>Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portfournisconfiguration</em>' containment reference list.
+	 * @return the value of the '<em>Portfournisconfiguration</em>' reference list.
 	 * @see asa.AsaPackage#getConfiguration_Portfournisconfiguration()
-	 * @model containment="true" required="true"
+	 * @see asa.PortFournisConfiguration#getConfiguration
+	 * @model opposite="configuration"
 	 * @generated
 	 */
 	EList<PortFournisConfiguration> getPortfournisconfiguration();
 
 	/**
-	 * Returns the value of the '<em><b>Portrequisconfiguration</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Portrequisconfiguration</b></em>' reference list.
 	 * The list contents are of type {@link asa.PortRequisConfiguration}.
+	 * It is bidirectional and its opposite is '{@link asa.PortRequisConfiguration#getConfiguration <em>Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Portrequisconfiguration</em>' containment reference list.
+	 * @return the value of the '<em>Portrequisconfiguration</em>' reference list.
 	 * @see asa.AsaPackage#getConfiguration_Portrequisconfiguration()
-	 * @model containment="true" required="true"
+	 * @see asa.PortRequisConfiguration#getConfiguration
+	 * @model opposite="configuration"
 	 * @generated
 	 */
 	EList<PortRequisConfiguration> getPortrequisconfiguration();

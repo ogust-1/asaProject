@@ -1,0 +1,34 @@
+package asaM1;
+
+import asa.AsaFactory;
+import asa.AsaPackage;
+import asa.*;
+import asa.impl.*;
+
+public class ClientServeur extends ConfigurationImpl{
+	
+	private Client client;
+	private Serveur serveur;
+	private RPC RPC;
+	private RPCReponse RPCReponse;
+
+	public ClientServeur() {
+
+		AsaPackage aPackage=AsaPackage.eINSTANCE;
+		AsaFactory factory= aPackage.getAsaFactory();
+		
+		this.client=new Client();
+		this.serveur=new Serveur();
+		RPC=new RPC();
+		RPCReponse=new RPCReponse();
+		
+		RPC.setPortIn(client.getOut());
+		RPC.setPortOut(serveur.getInExt());
+		
+		RPCReponse.setPortIn(serveur.getInExt());
+		
+		
+		
+	}
+
+}

@@ -16,16 +16,16 @@ public class RPC extends ConnecteurImpl{
 	
 	private RoleFournis out;
 	private RoleRequis in;
-	private Glue glue;
 	
 	public RPC() {
 		super();
 		this.setName("RPC");
 		out=factory.createRoleFournis();
 		in=factory.createRoleRequis();
-		glue=factory.createGlue();
 		this.getRolerequis().add(in);
 		this.getRolefournis().add(out);
+		in.setConnecteur(this);
+		out.setConnecteur(this);
 	}
 	
 	public RoleRequis getIn() {
@@ -42,5 +42,10 @@ public class RPC extends ConnecteurImpl{
 	
 	public void setPortOut(PortRequisComposant portRequis) {
 		out.getAttachement().add(portRequis);
+	}
+	
+	public void glue(Client cl, int i) {
+		Serveur serveur=(Serveur)out.getAttachement().get(0).getComposant();
+		serveur.request(cl, i);
 	}
 }

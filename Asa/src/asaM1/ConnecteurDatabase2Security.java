@@ -45,12 +45,10 @@ public class ConnecteurDatabase2Security extends ConnecteurImpl{
 	}
 	
 	public void glue(boolean b) {
-		
+		System.out.println("reponse de la db reç et transmise au security");
 		SecurityManager m=(SecurityManager)out.getAttachement().get(0).getComposant();
-		if(b) {
-		m.reponseDataBase("vous avez accès", b);}
-		else {
-			m.reponseDataBase("vous n'avez pas accès", b);
-		}
+		if (b) {
+			m.reponseDataBase("le client a accès", b);
+		}else m.reponseDataBase("le client n'a pas accès", b);
 	}
 }

@@ -260,6 +260,15 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPortFournisConfiguration_Configuration() {
+		return (EReference) portFournisConfigurationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPortRequisConfiguration() {
 		return portRequisConfigurationEClass;
 	}
@@ -271,6 +280,15 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 */
 	public EReference getPortRequisConfiguration_Binding() {
 		return (EReference) portRequisConfigurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPortRequisConfiguration_Configuration() {
+		return (EReference) portRequisConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -603,24 +621,6 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 * @generated
 	 */
 	public EReference getConfiguration_Portfournisconfiguration() {
-		return (EReference) configurationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConfiguration_Portrequisconfiguration() {
-		return (EReference) configurationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConfiguration_Composant() {
 		return (EReference) configurationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -629,8 +629,26 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConfiguration_Connecteur() {
+	public EReference getConfiguration_Portrequisconfiguration() {
 		return (EReference) configurationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConfiguration_Composant() {
+		return (EReference) configurationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConfiguration_Connecteur() {
+		return (EReference) configurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -703,9 +721,11 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 
 		portFournisConfigurationEClass = createEClass(PORT_FOURNIS_CONFIGURATION);
 		createEReference(portFournisConfigurationEClass, PORT_FOURNIS_CONFIGURATION__BINDING);
+		createEReference(portFournisConfigurationEClass, PORT_FOURNIS_CONFIGURATION__CONFIGURATION);
 
 		portRequisConfigurationEClass = createEClass(PORT_REQUIS_CONFIGURATION);
 		createEReference(portRequisConfigurationEClass, PORT_REQUIS_CONFIGURATION__BINDING);
+		createEReference(portRequisConfigurationEClass, PORT_REQUIS_CONFIGURATION__CONFIGURATION);
 
 		portFournisComposantEClass = createEClass(PORT_FOURNIS_COMPOSANT);
 		createEReference(portFournisComposantEClass, PORT_FOURNIS_COMPOSANT__BINDING);
@@ -754,10 +774,10 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 		createEReference(composantEClass, COMPOSANT__PORTFOURNISCOMPOSANT);
 
 		configurationEClass = createEClass(CONFIGURATION);
-		createEReference(configurationEClass, CONFIGURATION__PORTFOURNISCONFIGURATION);
-		createEReference(configurationEClass, CONFIGURATION__PORTREQUISCONFIGURATION);
 		createEReference(configurationEClass, CONFIGURATION__COMPOSANT);
 		createEReference(configurationEClass, CONFIGURATION__CONNECTEUR);
+		createEReference(configurationEClass, CONFIGURATION__PORTFOURNISCONFIGURATION);
+		createEReference(configurationEClass, CONFIGURATION__PORTREQUISCONFIGURATION);
 
 		constraintEClass = createEClass(CONSTRAINT);
 		createEAttribute(constraintEClass, CONSTRAINT__NAME);
@@ -816,6 +836,10 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 				this.getPortRequisComposant_Binding(), "binding", null, 0, -1, PortFournisConfiguration.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortFournisConfiguration_Configuration(), this.getConfiguration(),
+				this.getConfiguration_Portfournisconfiguration(), "configuration", null, 1, 1,
+				PortFournisConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portRequisConfigurationEClass, PortRequisConfiguration.class, "PortRequisConfiguration",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -823,6 +847,10 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 				this.getPortFournisComposant_Binding(), "binding", null, 0, -1, PortRequisConfiguration.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPortRequisConfiguration_Configuration(), this.getConfiguration(),
+				this.getConfiguration_Portrequisconfiguration(), "configuration", null, 1, 1,
+				PortRequisConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portFournisComposantEClass, PortFournisComposant.class, "PortFournisComposant", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -930,17 +958,19 @@ public class AsaPackageImpl extends EPackageImpl implements AsaPackage {
 
 		initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConfiguration_Portfournisconfiguration(), this.getPortFournisConfiguration(), null,
-				"portfournisconfiguration", null, 1, -1, Configuration.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConfiguration_Portrequisconfiguration(), this.getPortRequisConfiguration(), null,
-				"portrequisconfiguration", null, 1, -1, Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConfiguration_Composant(), this.getComposant(), null, "composant", null, 0, -1,
 				Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConfiguration_Connecteur(), this.getConnecteur(), null, "connecteur", null, 0, -1,
 				Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConfiguration_Portfournisconfiguration(), this.getPortFournisConfiguration(),
+				this.getPortFournisConfiguration_Configuration(), "portfournisconfiguration", null, 0, -1,
+				Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConfiguration_Portrequisconfiguration(), this.getPortRequisConfiguration(),
+				this.getPortRequisConfiguration_Configuration(), "portrequisconfiguration", null, 0, -1,
+				Configuration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE,

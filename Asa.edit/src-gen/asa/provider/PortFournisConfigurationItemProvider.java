@@ -43,6 +43,7 @@ public class PortFournisConfigurationItemProvider extends PortItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addBindingPropertyDescriptor(object);
+			addConfigurationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -60,6 +61,21 @@ public class PortFournisConfigurationItemProvider extends PortItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_PortFournisConfiguration_binding_feature",
 								"_UI_PortFournisConfiguration_type"),
 						AsaPackage.Literals.PORT_FOURNIS_CONFIGURATION__BINDING, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Configuration feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConfigurationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_PortFournisConfiguration_configuration_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_PortFournisConfiguration_configuration_feature",
+						"_UI_PortFournisConfiguration_type"),
+				AsaPackage.Literals.PORT_FOURNIS_CONFIGURATION__CONFIGURATION, true, false, true, null, null, null));
 	}
 
 	/**

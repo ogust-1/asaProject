@@ -46,7 +46,9 @@ public class ConnecteurConnection2Security extends ConnecteurImpl{
 	}
 	
 	public void glue(Client c) {
+		System.out.println("Demande de Verification d'accès du client "+c.getName()+" transmise au securityManager");
 		SecurityManager s=(SecurityManager) out.getAttachement().get(0).getComposant();
 		s.interrogationDataBase(c);
+		
 	}
 }

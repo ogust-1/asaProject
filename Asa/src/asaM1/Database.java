@@ -56,6 +56,7 @@ public class Database extends ComposantImpl {
 	
 	public void  serviceConnection(int i) {
 		sentReponse2Connection( BDClient.get(i));
+		System.out.println("client "+i+" envoyé au connecteur");
 	}
 	
 	public void clientIsPresent(Client client) {
@@ -66,13 +67,12 @@ public class Database extends ComposantImpl {
 	public void sentReponse2Connection(Client client) {		
 		ConnecteurDatabase2Connection c=(ConnecteurDatabase2Connection) this.out.getAttachement().get(1).getConnecteur();
 		c.glue(client);
-		System.out.println("client envoyé au connecteur");
 	}
 	
 	public void sentResponse2Security(boolean b) {
 		ConnecteurDatabase2Security c= (ConnecteurDatabase2Security) this.out.getAttachement().get(0).getConnecteur();
 		c.glue(b);
-		System.out.println("reponse de security envoyé");
+		System.out.println("reponse envoyé au securityManager");
 	}
 	
 }

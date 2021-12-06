@@ -44,8 +44,10 @@ public class ConnecteurConnection2Database extends ConnecteurImpl{
 	}
 	
 	public void glue(int i ) {
+		System.out.println("Transmission de la requete du manager à la db");
 		Database d=(Database) out.getAttachement().get(0).getComposant();
 		d.serviceConnection(i);
+		
 	}
 	
 }

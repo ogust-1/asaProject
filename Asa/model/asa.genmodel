@@ -13,9 +13,11 @@
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//PortFournisConfiguration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortFournisConfiguration/binding"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortFournisConfiguration/configuration"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//PortRequisConfiguration">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortRequisConfiguration/binding"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortRequisConfiguration/configuration"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//PortFournisComposant">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//PortFournisComposant/binding"/>
@@ -62,10 +64,10 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//Composant/portfourniscomposant"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//Configuration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Configuration/portfournisconfiguration"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Configuration/portrequisconfiguration"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Configuration/composant"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference asa.ecore#//Configuration/connecteur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//Configuration/portfournisconfiguration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference asa.ecore#//Configuration/portrequisconfiguration"/>
     </genClasses>
     <genClasses ecoreClass="asa.ecore#//Constraint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute asa.ecore#//Constraint/Name"/>

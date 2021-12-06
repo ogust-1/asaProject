@@ -56,7 +56,7 @@ public class ConnectionManager extends ComposantImpl{
 	
 	public void reponseDatabse(String name) {
 		this.name=name;
-		System.out.println("name");
+		System.out.println(name);
 	}
 	
 	public void reponseSecurity(String s, Boolean b) {
@@ -78,5 +78,16 @@ public class ConnectionManager extends ComposantImpl{
 		co.glue(c);
 		System.out.println("requete envoyé au security");
 		
+	}
+	
+	public void questionSeveur(Client cl, int i) {
+		InterrogationDatabase(cl,i);
+		
+	}
+	public void reponseServeur() {
+		Serveur s=(Serveur)out.getBinding().get(0).getConfiguration();
+		if (autorized) {
+		s.answer(this.name, "accès valide");}
+		else s.answer(null, "accès non valide, user non autorisé");
 	}
 }

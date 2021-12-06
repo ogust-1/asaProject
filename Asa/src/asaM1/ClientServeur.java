@@ -10,20 +10,25 @@ public class ClientServeur extends ConfigurationImpl{
 	private Client client;
 	private Serveur serveur;
 	private RPC RPC;
+	private RPCReponse RPCReponse;
 
-	public ClientServeur() {
+	public ClientServeur(Client client,Serveur serveur) {
 
 		AsaPackage aPackage=AsaPackage.eINSTANCE;
 		AsaFactory factory= aPackage.getAsaFactory();
 		
-		this.client=new Client();
-		this.serveur=new Serveur();
+		this.client=client;
+		this.serveur=serveur;
+		//this.client=new Client();
+		//this.serveur=new Serveur();
 		RPC=new RPC();
+		RPCReponse=new RPCReponse();
 		
 		RPC.setPortIn(client.getOut());
-		RPC.setPortIn(serveur.getOutExt());
-		RPC.setPortOut(client.getIn());
-		RPC.setPortIn(serveur.getOutExt());
+		RPC.setPortOut(serveur.getInExt());
+		
+		RPCReponse.setPortIn(serveur.getOutExt());
+		RPCReponse.setPortOut(client.getIn());
 		
 		
 		

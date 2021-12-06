@@ -49,11 +49,13 @@ public class SecurityManager extends ComposantImpl {
 	public void reponseDataBase(String s, Boolean b) {
 		ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
 		c.glue(s,b);
+		System.out.println("La db à envoyé sa reponse");
 	}
 	
 	public void interrogationDataBase(Client c) {
 		ConnecteurSecurity2Database co= (ConnecteurSecurity2Database)out.getAttachement().get(0).getConnecteur();
 		co.glue( c);
+		System.out.println("Verification auprès de la db que le client y a accès");
 	}
 
 }

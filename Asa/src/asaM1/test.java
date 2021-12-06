@@ -12,9 +12,11 @@ public class test {
 		cl2.setName("cl2");
 		Serveur serveur=new Serveur();
 		serveur.getData().addClient(cl1);
-		serveur.getCOnnection().InterrogationSecurity(cl2);
-		serveur.getCOnnection().InterrogationDatabase(cl1, 0);
-		
+		//serveur.getCOnnection().InterrogationSecurity(cl2);
+		//serveur.getCOnnection().InterrogationDatabase(cl1, 0);
+		ClientServeur cl=new ClientServeur(cl2, serveur);
+		//cl1.sendRequest(0);
+		cl2.sendRequest(0);
 		
 	}
 

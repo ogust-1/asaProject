@@ -7,10 +7,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="PortFournisConfiguration" eSuperTypes="#//Port">
     <eStructuralFeatures xsi:type="ecore:EReference" name="binding" upperBound="-1"
         eType="#//PortRequisComposant" eOpposite="#//PortRequisComposant/binding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" lowerBound="1"
+        eType="#//Configuration" eOpposite="#//Configuration/portfournisconfiguration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortRequisConfiguration" eSuperTypes="#//Port">
     <eStructuralFeatures xsi:type="ecore:EReference" name="binding" upperBound="-1"
         eType="#//PortFournisComposant" eOpposite="#//PortFournisComposant/binding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" lowerBound="1"
+        eType="#//Configuration" eOpposite="#//Configuration/portrequisconfiguration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortFournisComposant" eSuperTypes="#//Port">
     <eStructuralFeatures xsi:type="ecore:EReference" name="binding" upperBound="-1"
@@ -76,14 +80,14 @@
         eType="#//PortFournisComposant" eOpposite="#//PortFournisComposant/composant"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Configuration" eSuperTypes="#//Composant">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portfournisconfiguration"
-        lowerBound="1" upperBound="-1" eType="#//PortFournisConfiguration" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisconfiguration"
-        lowerBound="1" upperBound="-1" eType="#//PortRequisConfiguration" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="composant" upperBound="-1"
         eType="#//Composant" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connecteur" upperBound="-1"
         eType="#//Connecteur" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portfournisconfiguration"
+        upperBound="-1" eType="#//PortFournisConfiguration" eOpposite="#//PortFournisConfiguration/configuration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portrequisconfiguration"
+        upperBound="-1" eType="#//PortRequisConfiguration" eOpposite="#//PortRequisConfiguration/configuration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -122,13 +122,22 @@ public interface AsaPackage extends EPackage {
 	int PORT_FOURNIS_CONFIGURATION__BINDING = PORT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_FOURNIS_CONFIGURATION__CONFIGURATION = PORT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Port Fournis Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FOURNIS_CONFIGURATION_FEATURE_COUNT = PORT_FEATURE_COUNT + 1;
+	int PORT_FOURNIS_CONFIGURATION_FEATURE_COUNT = PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Port Fournis Configuration</em>' class.
@@ -168,13 +177,22 @@ public interface AsaPackage extends EPackage {
 	int PORT_REQUIS_CONFIGURATION__BINDING = PORT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_REQUIS_CONFIGURATION__CONFIGURATION = PORT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Port Requis Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_REQUIS_CONFIGURATION_FEATURE_COUNT = PORT_FEATURE_COUNT + 1;
+	int PORT_REQUIS_CONFIGURATION_FEATURE_COUNT = PORT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Port Requis Configuration</em>' class.
@@ -837,31 +855,13 @@ public interface AsaPackage extends EPackage {
 	int CONFIGURATION__PORTFOURNISCOMPOSANT = COMPOSANT__PORTFOURNISCOMPOSANT;
 
 	/**
-	 * The feature id for the '<em><b>Portfournisconfiguration</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGURATION__PORTFOURNISCONFIGURATION = COMPOSANT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Portrequisconfiguration</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGURATION__PORTREQUISCONFIGURATION = COMPOSANT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Composant</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION__COMPOSANT = COMPOSANT_FEATURE_COUNT + 2;
+	int CONFIGURATION__COMPOSANT = COMPOSANT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Connecteur</b></em>' containment reference list.
@@ -870,7 +870,25 @@ public interface AsaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGURATION__CONNECTEUR = COMPOSANT_FEATURE_COUNT + 3;
+	int CONFIGURATION__CONNECTEUR = COMPOSANT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Portfournisconfiguration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION__PORTFOURNISCONFIGURATION = COMPOSANT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Portrequisconfiguration</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIGURATION__PORTREQUISCONFIGURATION = COMPOSANT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Configuration</em>' class.
@@ -1007,6 +1025,17 @@ public interface AsaPackage extends EPackage {
 	EReference getPortFournisConfiguration_Binding();
 
 	/**
+	 * Returns the meta object for the reference '{@link asa.PortFournisConfiguration#getConfiguration <em>Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Configuration</em>'.
+	 * @see asa.PortFournisConfiguration#getConfiguration()
+	 * @see #getPortFournisConfiguration()
+	 * @generated
+	 */
+	EReference getPortFournisConfiguration_Configuration();
+
+	/**
 	 * Returns the meta object for class '{@link asa.PortRequisConfiguration <em>Port Requis Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1026,6 +1055,17 @@ public interface AsaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPortRequisConfiguration_Binding();
+
+	/**
+	 * Returns the meta object for the reference '{@link asa.PortRequisConfiguration#getConfiguration <em>Configuration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Configuration</em>'.
+	 * @see asa.PortRequisConfiguration#getConfiguration()
+	 * @see #getPortRequisConfiguration()
+	 * @generated
+	 */
+	EReference getPortRequisConfiguration_Configuration();
 
 	/**
 	 * Returns the meta object for class '{@link asa.PortFournisComposant <em>Port Fournis Composant</em>}'.
@@ -1412,10 +1452,10 @@ public interface AsaPackage extends EPackage {
 	EClass getConfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link asa.Configuration#getPortfournisconfiguration <em>Portfournisconfiguration</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.Configuration#getPortfournisconfiguration <em>Portfournisconfiguration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Portfournisconfiguration</em>'.
+	 * @return the meta object for the reference list '<em>Portfournisconfiguration</em>'.
 	 * @see asa.Configuration#getPortfournisconfiguration()
 	 * @see #getConfiguration()
 	 * @generated
@@ -1423,10 +1463,10 @@ public interface AsaPackage extends EPackage {
 	EReference getConfiguration_Portfournisconfiguration();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link asa.Configuration#getPortrequisconfiguration <em>Portrequisconfiguration</em>}'.
+	 * Returns the meta object for the reference list '{@link asa.Configuration#getPortrequisconfiguration <em>Portrequisconfiguration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Portrequisconfiguration</em>'.
+	 * @return the meta object for the reference list '<em>Portrequisconfiguration</em>'.
 	 * @see asa.Configuration#getPortrequisconfiguration()
 	 * @see #getConfiguration()
 	 * @generated
@@ -1557,6 +1597,14 @@ public interface AsaPackage extends EPackage {
 		EReference PORT_FOURNIS_CONFIGURATION__BINDING = eINSTANCE.getPortFournisConfiguration_Binding();
 
 		/**
+		 * The meta object literal for the '<em><b>Configuration</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_FOURNIS_CONFIGURATION__CONFIGURATION = eINSTANCE.getPortFournisConfiguration_Configuration();
+
+		/**
 		 * The meta object literal for the '{@link asa.impl.PortRequisConfigurationImpl <em>Port Requis Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1573,6 +1621,14 @@ public interface AsaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PORT_REQUIS_CONFIGURATION__BINDING = eINSTANCE.getPortRequisConfiguration_Binding();
+
+		/**
+		 * The meta object literal for the '<em><b>Configuration</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_REQUIS_CONFIGURATION__CONFIGURATION = eINSTANCE.getPortRequisConfiguration_Configuration();
 
 		/**
 		 * The meta object literal for the '{@link asa.impl.PortFournisComposantImpl <em>Port Fournis Composant</em>}' class.
@@ -1887,7 +1943,7 @@ public interface AsaPackage extends EPackage {
 		EClass CONFIGURATION = eINSTANCE.getConfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Portfournisconfiguration</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Portfournisconfiguration</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1895,7 +1951,7 @@ public interface AsaPackage extends EPackage {
 		EReference CONFIGURATION__PORTFOURNISCONFIGURATION = eINSTANCE.getConfiguration_Portfournisconfiguration();
 
 		/**
-		 * The meta object literal for the '<em><b>Portrequisconfiguration</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Portrequisconfiguration</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -16,8 +16,6 @@ public class Client extends ComposantImpl {
 		super();
 		in=factory.createPortRequisComposant();
 		out=factory.createPortFournisComposant();
-		//this.port = this.factory.createPortFournisComposant();
-		//this.port.setName(name + "_Send_Request");
 	}
 	
 	public PortRequisComposant getIn() {
@@ -28,7 +26,12 @@ public class Client extends ComposantImpl {
 		return this.out;
 	}
 	
-	public void sendRequest() {
-		
+	public void sendRequest(int i) {
+		RPC c=(RPC)out.getAttachement().get(0).getConnecteur();
+		c.glue(this, i);
+	}
+	
+	public void receiveRequest(String s){
+		System.out.println(s);
 	}
 }

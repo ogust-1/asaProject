@@ -45,10 +45,9 @@ public class ConnecteurDatabase2Connection extends ConnecteurImpl {
 	}
 	
 	public void glue(Client client) {
-		System.out.println("client reçu");
+		System.out.println("numero client reçu sur le connecteur et transmis au manager");
 		ConnectionManager c=(ConnectionManager)out.getAttachement().get(0).getComposant();
 		c.reponseDatabse(client.getName());
-		System.out.println("Nom du client envoyé au manager");
 	}
 	
 

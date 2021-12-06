@@ -43,6 +43,8 @@ public class Serveur extends ConfigurationImpl{
 		in=factory.createPortRequisConfiguration();
 		inExt.setComposant(this);
 		outExt.setComposant(this);
+		out.setConfiguration(this);
+		in.setConfiguration(this);
 		
 		
 		dataBase=new Database();
@@ -120,6 +122,16 @@ public class Serveur extends ConfigurationImpl{
 	
 	public void setOutExt(RoleRequis roleRequis) {
 		outExt.getAttachement().add(roleRequis);
+	}
+	
+	public void request(Client cl, int i) {
+		ConnectionManager c=(ConnectionManager) out.getBinding().get(0).getComposant();
+		c.questionSeveur(cl, i);
+	}
+	
+	public void answer(String name, String reponse) {
+		RPCReponse r=(RPCReponse)outExt.getAttachement().get(0).getConnecteur();
+		r.glue(name,reponse);
 	}
 
 }
