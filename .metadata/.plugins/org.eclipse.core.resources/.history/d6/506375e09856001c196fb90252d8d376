@@ -1,0 +1,16 @@
+package asaM1;
+
+import asa.AsaFactory;
+import asa.AsaPackage;
+import asa.impl.ConnecteurImpl;
+
+public class ConnecteurDatabase2SecurityManager extends ConnecteurImpl{
+
+	AsaPackage aPackage=AsaPackage.eINSTANCE;
+	AsaFactory factory= aPackage.getAsaFactory();
+	
+	public ConnecteurDatabase2SecurityManager() {
+		super();
+	}
+
+}
