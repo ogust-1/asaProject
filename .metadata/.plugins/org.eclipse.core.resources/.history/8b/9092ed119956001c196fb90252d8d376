@@ -1,0 +1,23 @@
+package asaM1;
+
+import asa.AsaFactory;
+import asa.AsaPackage;
+import asa.RoleFournis;
+import asa.RoleRequis;
+import asa.impl.ConnecteurImpl;
+
+public class ConnecteurDatabase2SecurityManager extends ConnecteurImpl{
+	AsaPackage aPackage=AsaPackage.eINSTANCE;
+	AsaFactory factory= aPackage.getAsaFactory();
+	
+	RoleRequis in;
+	RoleFournis out;
+	
+	public ConnecteurDatabase2SecurityManager() {
+		super();
+		this.setName("ConnecteurDatabase2SecurityManager");
+		in=factory.createRoleRequis();
+		out=factory.createRoleFournis();
+	}
+
+}
