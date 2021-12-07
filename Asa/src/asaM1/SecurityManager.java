@@ -1,5 +1,7 @@
 package asaM1;
 
+import java.util.ArrayList;
+
 import asa.AsaFactory;
 import asa.AsaPackage;
 import asa.PortFournisComposant;
@@ -15,6 +17,7 @@ public class SecurityManager extends ComposantImpl {
 	
 	private PortRequisComposant in;
 	private PortFournisComposant out;
+	private ArrayList<String> blackList;
 	
 	public SecurityManager() {
 		super();
@@ -28,6 +31,7 @@ public class SecurityManager extends ComposantImpl {
 
 		this.getPortrequiscomposant().add(in);
 		this.getPortfourniscomposant().add(out);
+		this.blackList= new ArrayList<>();
 	}
 	
 	public PortRequisComposant getIn(){
@@ -46,16 +50,33 @@ public class SecurityManager extends ComposantImpl {
 		out.getAttachement().add(roleRequis);
 	}
 	
-	public void reponseDataBase(String s, Boolean b) {
-		ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
-		c.glue(s,b);
-		System.out.println("La db à envoyé sa reponse");
+	public void addBlacklist(String name) {
+		this.blackList.add(name);
 	}
 	
+	//fournis
+	public void reponseDataBase(String s, Boolean b, Boolean indesirable) {
+		if(! indesirable) {
+		System.out.println("La db à envoyé sa reponse");
+		ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
+		c.glue(s,b);}
+		else {
+			ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
+			c.glue(s,b);}
+		}
+		
+	
+	
+	//fournis
 	public void interrogationDataBase(Client c) {
+		if (blackList.contains(c.getName())) {
+			reponseDataBase("le client est indesirable", false, true);
+		}
+		else {
+		System.out.println("Verification auprès de la db que le client y a accès");
 		ConnecteurSecurity2Database co= (ConnecteurSecurity2Database)out.getAttachement().get(0).getConnecteur();
 		co.glue( c);
-		System.out.println("Verification auprès de la db que le client y a accès");
+		}
 	}
 
 }

@@ -44,7 +44,13 @@ public class RPC extends ConnecteurImpl{
 		out.getAttachement().add(portRequis);
 	}
 	
+	public void deletePort() {
+		out.getAttachement().remove(0);
+		in.getAttachement().remove(0);
+	}
+	
 	public void glue(Client cl, int i) {
+		System.out.println("requete reçu dans le RPC");
 		Serveur serveur=(Serveur)out.getAttachement().get(0).getComposant();
 		serveur.request(cl, i);
 	}

@@ -19,19 +19,31 @@ public class ClientServeur extends ConfigurationImpl{
 		
 		this.client=client;
 		this.serveur=serveur;
-		//this.client=new Client();
-		//this.serveur=new Serveur();
 		RPC=new RPC();
 		RPCReponse=new RPCReponse();
 		
 		RPC.setPortIn(client.getOut());
 		RPC.setPortOut(serveur.getInExt());
 		
-		RPCReponse.setPortIn(serveur.getOutExt());
+		RPCReponse.setPortIn(serveur.getOutExt());		
 		RPCReponse.setPortOut(client.getIn());
+			
 		
 		
-		
+	}
+	
+	public void changeClient(Client cl) {
+		this.client=cl;
+		RPC.deletePort();
+		RPCReponse.deletePort();
+		RPC.setPortIn(client.getOut());
+		RPC.setPortOut(serveur.getInExt());	
+		RPCReponse.setPortIn(serveur.getOutExt());		
+		RPCReponse.setPortOut(client.getIn());
+	}
+	
+	public void demandeClient(int i) {
+		client.sendRequest(i);
 	}
 
 }

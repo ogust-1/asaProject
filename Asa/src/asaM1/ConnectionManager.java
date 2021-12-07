@@ -65,6 +65,7 @@ public class ConnectionManager extends ComposantImpl{
 		
 	}
 	
+	//fournis
 	public void InterrogationDatabase (Client c, int i) {
 		InterrogationSecurity(c);
 		if (this.autorized) {
@@ -73,17 +74,22 @@ public class ConnectionManager extends ComposantImpl{
 		}
 	}
 	
+	//fournis
 	public void InterrogationSecurity(Client c) {
+		System.out.println("requete envoyé au manager2Security pour verification");
 		ConnecteurConnection2Security co=(ConnecteurConnection2Security) out.getAttachement().get(0).getConnecteur();
 		co.glue(c);
-		System.out.println("requete envoyé au security");
 		
 	}
 	
+	//fournis
 	public void questionSeveur(Client cl, int i) {
+		System.out.println("requete reçue dans le ConnectionManager");
 		InterrogationDatabase(cl,i);
 		
 	}
+	
+	//requis
 	public void reponseServeur() {
 		Serveur s=(Serveur)out.getBinding().get(0).getConfiguration();
 		if (autorized) {

@@ -24,13 +24,6 @@ public class Serveur extends ConfigurationImpl{
 	private ConnecteurSecurity2Connection security2Connection;
 	private ConnecteurSecurity2Database security2DataBase;
 	
-	/*private ConnecteurServeur dataBase2Security;
-	//private ConnecteurServeur dataBase2Connection;
-	private ConnecteurDatabase2Connection dataBase2Connection;
-	private ConnecteurServeur security2DataBase;
-	private ConnecteurServeur security2Connection;
-	private ConnecteurServeur connection2Security;
-	private ConnecteurServeur connection2DataBase;*/
 	
 	
 	
@@ -54,16 +47,6 @@ public class Serveur extends ConfigurationImpl{
 		this.getComposant().add(securityManager);
 		this.getComposant().add(dataBase);
 		
-		/*ataBase2Security=new ConnecteurDatabase2Security();
-		connection2DataBase=new ConnecteurConnection2Database();
-		connection2Security=new ConnecteurConnection2Security();*/
-		
-		/*dataBase2Security=new ConnecteurServeur();
-		//dataBase2Connection=new ConnecteurServeur();
-		connection2DataBase=new ConnecteurServeur();
-		connection2Security=new ConnecteurServeur();
-		security2Connection= new ConnecteurServeur();
-		security2DataBase= new ConnecteurServeur();*/
 		
 		dataBase2Security=new ConnecteurDatabase2Security();
 		dataBase2Connection=new ConnecteurDatabase2Connection();
@@ -96,12 +79,13 @@ public class Serveur extends ConfigurationImpl{
 		
 	}
 	
-	public ConnecteurDatabase2Security getTest() {
-		return this.dataBase2Security;
+	
+	public void addClient(Client cl) {
+		 this.dataBase.addClient(cl);;
 	}
 	
-	public Database getData() {
-		return this.dataBase;
+	public void addBlacklist(String name) {
+		securityManager.addBlacklist(name);
 	}
 	
 	public ConnectionManager getCOnnection() {
@@ -125,6 +109,7 @@ public class Serveur extends ConfigurationImpl{
 	}
 	
 	public void request(Client cl, int i) {
+		System.out.println("requete reçu dans le serveur");
 		ConnectionManager c=(ConnectionManager) out.getBinding().get(0).getComposant();
 		c.questionSeveur(cl, i);
 	}
@@ -133,5 +118,7 @@ public class Serveur extends ConfigurationImpl{
 		RPCReponse r=(RPCReponse)outExt.getAttachement().get(0).getConnecteur();
 		r.glue(name,reponse);
 	}
+	
+
 
 }

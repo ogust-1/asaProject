@@ -44,7 +44,13 @@ public class RPCReponse extends ConnecteurImpl{
 		out.getAttachement().add(portRequis);
 	}
 	
+	public void deletePort() {
+		out.getAttachement().remove(0);
+		in.getAttachement().remove(0);
+	}
+	
 	public void glue(String name, String reponse) {
+		System.out.println("réponse reçu dans le RPCReponse");
 		Client cl=(Client)out.getAttachement().get(0).getComposant();
 		cl.receiveRequest(name+reponse);
 	}

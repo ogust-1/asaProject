@@ -1,0 +1,26 @@
+package asaM1;
+
+import asa.PortFournisComposant;
+import asa.RoleFournis;
+
+public class test {
+
+	public static void main(String[] args) {
+		Client cl1=new Client();
+		Client cl2=new Client();
+		Client cl3=new Client();
+		Client cl4=new Client();
+		cl1.setName("cl1");
+		cl2.setName("cl2");
+		Serveur serveur=new Serveur();
+		serveur.addClient(cl1);
+		serveur.addBlacklist("cl1");
+		//serveur.getCOnnection().InterrogationSecurity(cl2);
+		//serveur.getCOnnection().InterrogationDatabase(cl1, 0);
+		ClientServeur cl=new ClientServeur(cl1, serveur);
+		cl1.sendRequest(0);
+		//cl2.sendRequest(0);
+		
+	}
+
+}

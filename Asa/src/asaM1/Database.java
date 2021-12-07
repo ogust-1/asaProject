@@ -54,25 +54,31 @@ public class Database extends ComposantImpl {
 		this.BDClient.add(client);
 	}
 	
+	//requis
 	public void  serviceConnection(int i) {
-		sentReponse2Connection( BDClient.get(i));
 		System.out.println("client "+i+" envoyé au connecteur");
+		sentReponse2Connection( BDClient.get(i));
+		
 	}
 	
+	//requis
 	public void clientIsPresent(Client client) {
+		System.out.println("reponse envoyéz au securityManager");
 		sentResponse2Security( BDClient.contains(client));
 	}
 	
-	
-	public void sentReponse2Connection(Client client) {		
+	//fournis
+	public void sentReponse2Connection(Client client) {	
 		ConnecteurDatabase2Connection c=(ConnecteurDatabase2Connection) this.out.getAttachement().get(1).getConnecteur();
 		c.glue(client);
 	}
 	
+	//Fournis
 	public void sentResponse2Security(boolean b) {
+		
 		ConnecteurDatabase2Security c= (ConnecteurDatabase2Security) this.out.getAttachement().get(0).getConnecteur();
 		c.glue(b);
-		System.out.println("reponse envoyé au securityManager");
+		
 	}
 	
 }

@@ -45,7 +45,7 @@ public class ConnecteurSecurity2Connection extends ConnecteurImpl{
 	}
 	
 	public void glue(String s, Boolean b) {
-		System.out.println("transmission dela reponse à la demande de connexion "+s);
+		System.out.println("transmission de la reponse à la demande de connexion "+s);
 		ConnectionManager c=(ConnectionManager)out.getAttachement().get(0).getComposant();
 		c.reponseSecurity(s, b);
 	}
