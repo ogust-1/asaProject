@@ -18,7 +18,6 @@ public class Database extends ComposantImpl {
 	private PortRequisComposant in;
 	private PortFournisComposant out;
 	private ArrayList<Client> BDClient;
-	private ArrayList<String> blackList;
 	
 	
 	public Database() {
@@ -29,7 +28,6 @@ public class Database extends ComposantImpl {
 		this.getPortrequiscomposant().add(in);
 		this.getPortfourniscomposant().add(out);
 		this.BDClient=new ArrayList<>();
-		this.blackList=new ArrayList<>();
 		in.setComposant(this);
 		out.setComposant(this);
 		
@@ -56,10 +54,6 @@ public class Database extends ComposantImpl {
 		this.BDClient.add(client);
 	}
 	
-	public void addBlacklist(String name) {
-		this.blackList.add(name);
-	}
-	
 	//requis
 	public void  serviceConnection(int i) {
 		System.out.println("client "+i+" envoyé au connecteur");
@@ -69,12 +63,8 @@ public class Database extends ComposantImpl {
 	
 	//requis
 	public void clientIsPresent(Client client) {
-		System.out.println("reponse envoyé au securityManager");
-		if (blackList.contains(client.getName())) {
-			sentResponse2Security( BDClient.contains(client), true);
-		}
-		else {
-		sentResponse2Security( BDClient.contains(client),false);}
+		System.out.println("reponse envoyéz au securityManager");
+		sentResponse2Security( BDClient.contains(client));
 	}
 	
 	//fournis
@@ -84,10 +74,10 @@ public class Database extends ComposantImpl {
 	}
 	
 	//Fournis
-	public void sentResponse2Security(boolean b, boolean blackList) {
+	public void sentResponse2Security(boolean b) {
 		
 		ConnecteurDatabase2Security c= (ConnecteurDatabase2Security) this.out.getAttachement().get(0).getConnecteur();
-		c.glue(b, blackList);
+		c.glue(b);
 		
 	}
 	

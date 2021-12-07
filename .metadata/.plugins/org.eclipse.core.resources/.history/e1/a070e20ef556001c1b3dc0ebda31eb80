@@ -48,7 +48,7 @@ public class ConnecteurDatabase2Security extends ConnecteurImpl{
 		System.out.println("reponse de la db reçue et transmise au security");
 		SecurityManager m=(SecurityManager)out.getAttachement().get(0).getComposant();
 		if(blackList) {
-			m.reponseDataBase("le client est blacklist", false, true);
+			m.reponseDataBase("le client n'a pas accès", false, true);
 		}
 		else{if (b) {
 			m.reponseDataBase("le client a accès", b, false);

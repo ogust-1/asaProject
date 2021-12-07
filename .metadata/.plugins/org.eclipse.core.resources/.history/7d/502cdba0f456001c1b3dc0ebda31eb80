@@ -56,10 +56,6 @@ public class Database extends ComposantImpl {
 		this.BDClient.add(client);
 	}
 	
-	public void addBlacklist(String name) {
-		this.blackList.add(name);
-	}
-	
 	//requis
 	public void  serviceConnection(int i) {
 		System.out.println("client "+i+" envoyé au connecteur");

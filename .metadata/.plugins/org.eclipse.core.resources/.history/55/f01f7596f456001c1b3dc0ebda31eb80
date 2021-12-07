@@ -54,17 +54,8 @@ public class SecurityManager extends ComposantImpl {
 		this.blackList.add(name);
 	}
 	
-	
-	
-	public void reponseDataBase(String s, Boolean b, Boolean indesirable) {
-		
-		System.out.println("La db à envoyé sa reponse");
-		ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
-		c.glue(s,b);
-		}
-		
 	//fournis
-	/*public void reponseDataBase(String s, Boolean b, Boolean indesirable) {
+	public void reponseDataBase(String s, Boolean b, Boolean indesirable) {
 		if(! indesirable) {
 		System.out.println("La db à envoyé sa reponse");
 		ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
@@ -72,7 +63,7 @@ public class SecurityManager extends ComposantImpl {
 		else {
 			ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
 			c.glue(s,b);}
-		}*/
+		}
 		
 	
 	
