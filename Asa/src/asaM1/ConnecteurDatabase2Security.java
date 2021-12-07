@@ -45,7 +45,7 @@ public class ConnecteurDatabase2Security extends ConnecteurImpl{
 	}
 	
 	public void glue(boolean b, boolean blackList) {
-		System.out.println("reponse de la db reçue et transmise au security");
+		System.out.println("reponse de la db reçue sur databse2security et transmise au security");
 		SecurityManager m=(SecurityManager)out.getAttachement().get(0).getComposant();
 		if(blackList) {
 			m.reponseDataBase("le client est blacklist", false, true);

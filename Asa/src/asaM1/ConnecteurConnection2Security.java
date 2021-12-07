@@ -28,7 +28,6 @@ public class ConnecteurConnection2Security extends ConnecteurImpl{
 		this.getRolerequis().add(in);
 		this.getRolefournis().add(out);
 	}
-	
 	public RoleRequis getIn() {
 		return this.in;
 	}

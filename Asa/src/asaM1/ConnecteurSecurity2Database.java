@@ -44,7 +44,7 @@ public class ConnecteurSecurity2Database extends ConnecteurImpl{
 	}
 	
 	public void glue(Client client) {
-		System.out.println("Verification que le client "+ client.getName()+ "a accès à la db");
+		System.out.println("demande Verification que le client "+ client.getName()+ "a accès à la db reçu dans security2database");
 		Database d=(Database) out.getAttachement().get(0).getComposant();
 		d.clientIsPresent(client);
 	}

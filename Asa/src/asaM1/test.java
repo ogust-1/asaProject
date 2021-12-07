@@ -16,11 +16,17 @@ public class test {
 		serveur.addClient(cl4);
 		serveur.addBlacklist("cl1");
 		ClientServeur cl=new ClientServeur(cl1, serveur);
-		//cl.demandeClient(0);
-		cl.changeClient(cl2);
-		//cl.demandeClient(0);
-		cl.changeClient(cl4);
+		
+		//test blacklist
 		cl.demandeClient(0);
+		
+		//test clien pas dans bd
+		//cl.changeClient(cl2);
+		//cl.demandeClient(0);
+		
+		//test client ayant accès
+		//cl.changeClient(cl4);
+		//cl.demandeClient(0);
 		/*cl.demandeClient(1);
 		cl.demandeClient(2);*/
 		

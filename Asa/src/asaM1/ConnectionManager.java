@@ -17,7 +17,7 @@ public class ConnectionManager extends ComposantImpl{
 	private PortRequisComposant in;
 	private PortFournisComposant out; 
 	private boolean autorized;
-	String name;
+	String nameClient;
 	
 	public ConnectionManager() {
 		super();
@@ -55,13 +55,13 @@ public class ConnectionManager extends ComposantImpl{
 	}
 	
 	public void reponseDatabse(String name) {
-		this.name=name;
+		this.nameClient=name;
 		System.out.println(name);
 	}
 	
 	public void reponseSecurity(String s, Boolean b) {
 		this.autorized=b;
-		System.out.println(s);
+		this.nameClient=name;
 		
 	}
 	
@@ -91,9 +91,10 @@ public class ConnectionManager extends ComposantImpl{
 	
 	//requis
 	public void reponseServeur() {
+		System.out.println("reponse reçu dans le connection manager");
 		Serveur s=(Serveur)out.getBinding().get(0).getConfiguration();
 		if (autorized) {
-		s.answer(this.name, "accès valide");}
+		s.answer(this.nameClient, "accès valide");}
 		else s.answer(null, "accès non valide, user non autorisé");
 	}
 }

@@ -86,6 +86,7 @@ public class Serveur extends ConfigurationImpl{
 	
 	public void addBlacklist(String name) {
 		this.dataBase.addBlacklist(name);
+		//this.answer(name, "reponse");
 	}
 	
 	public ConnectionManager getCOnnection() {

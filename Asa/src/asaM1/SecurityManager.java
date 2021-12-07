@@ -63,16 +63,6 @@ public class SecurityManager extends ComposantImpl {
 		c.glue(s,b);
 		}
 		
-	//fournis
-	/*public void reponseDataBase(String s, Boolean b, Boolean indesirable) {
-		if(! indesirable) {
-		System.out.println("La db à envoyé sa reponse");
-		ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
-		c.glue(s,b);}
-		else {
-			ConnecteurSecurity2Connection c= (ConnecteurSecurity2Connection)out.getAttachement().get(1).getConnecteur();
-			c.glue(s,b);}
-		}*/
 		
 	
 	
